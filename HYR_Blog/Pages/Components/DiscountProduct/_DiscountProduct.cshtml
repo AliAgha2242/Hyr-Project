@@ -1,0 +1,37 @@
+﻿@using HYR_Blog.CoreLayer.Dtos.ProductDto
+@using HYR_Blog.CoreLayer.Utilities.Other.Directories
+@model List<DiscountProductDto>
+
+@section Style {
+    <link href="~/SiteTemplate/assets/css/DiscountProduct.css" rel="stylesheet" />
+}
+
+<div class="container-main">
+    <div class="d-block">
+        <div class="adplacement-container-row">
+            <div class="col-12">
+                <a href="#" class="adplacement-item mb-4">
+                    <div class="adplacement-sponsored_box">
+                        <img src="~/SiteTemplate/assets/images/adplacement/a-8.jpg">
+                    </div>
+                </a>
+            </div>
+            @if (Model.Count >= 4)
+            {
+                @*___________________________________________________*@
+                @foreach (var item in Model)
+                {
+                    <div class="col-6 col-lg-3 pr" style="height:150px">
+                        <a asp-page="product" asp-route-slug="@item.Slug" class="adplacement-item" style="height:100px">
+                            <div class="adplacement-sponsored_box" style="display: grid;justify-content: center;align-content: center;">
+                                <div class="btn btn-success btn-sm " style="background-color:cyan;color:black;border-width:0px">@item.PriseByDiscount.ToString("n0")</div>
+                                <img src="@FileManage.GetProductImageByName(item.FirstImageName)" style="max-height:120px" title="@item.ProductName" alt="@item.ProductName" />
+                            </div>
+                        </a>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+

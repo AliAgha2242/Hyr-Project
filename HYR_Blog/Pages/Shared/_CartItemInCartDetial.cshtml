@@ -1,0 +1,83 @@
+﻿@using HYR_Blog.CoreLayer.Dtos.CartDto
+@using HYR_Blog.CoreLayer.Utilities.Other.Directories
+@model List<CartItemDetailDto>
+
+
+@if (Model != null && Model.Count > 0)
+{
+
+
+    @Html.AntiForgeryToken()
+
+    <form action="#" class="c-form">
+        <table class="table-cart cart table table-borderless">
+            <thead>
+                <tr>
+                    <th scope="col" class="product-cart-name">نام محصول</th>
+                    <th scope="col" class="product-cart-quantity">تعداد مورد نیاز</th>
+                    <th scope="col" class="product-cart-price">قیمت</th>
+                    <th scope="col" class="product-cart-Total">مجموع</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row" class="product-cart-name">
+                            <div class="product-thumbnail-img">
+                                <a href="#">
+                                    <img src="@FileManage.GetProductImageByName(item.FirstImageProduct)" title="@item.ProductName" alt="@item.ProductName">
+                                </a>
+                                <div class="product-remove">
+                                    <a onclick="RemoveAllItem(@item.CartItemId)" class="remove">
+                                        <i class="mdi mdi-close"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-title">
+                                <a asp-page="Product"asp-route-slug="@item.Slug">
+                                    @item.ProductName
+                                </a>
+
+                            </div>
+                        </th>
+                        <td class="product-cart-quantity">
+                            <div class="required-number before">
+                                <div class="quantity">
+                                    <input type="number" min="1"  max="10" step="1" value="@item.Count" id="@item.CartItemId"><div class="quantity-nav"><div onclick="AddCartItemInCart(@item.ProductId)" class="quantity-button quantity-up">+</div><div onclick="RemoveOneCartItemFromCart(@item.ProductId)" class="quantity-button quantity-down">-</div></div>
+                                    <span id="InventoryValidate"></span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="product-cart-price">
+                            <span id="cartItemPrise+@item.CartItemId" class="amount">
+                                @item.Prise.ToString("n0")
+                            </span>
+                            <span>تومان</span>
+                        </td>
+                        <td class="product-cart-Total">
+                            <span id="tp@(item.CartItemId.ToString())" class="amount">
+                                @item.TotalPrise.ToString("n0")
+                            </span>
+                            <span>تومان</span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </form>
+
+
+}
+
+else
+{
+
+
+    <form action="#" class="c-form">
+        <div class="alert alert-danger">سبد خرید شما خالی است</div>
+    </form>
+
+
+}

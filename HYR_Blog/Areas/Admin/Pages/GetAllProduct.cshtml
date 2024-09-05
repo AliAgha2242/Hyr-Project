@@ -1,0 +1,124 @@
+﻿@page "{handler?}"
+@using HYR_Blog.CoreLayer.Dtos.ProductDto
+@using HYR_Blog.CoreLayer.Utilities
+@using HYR_Blog.CoreLayer.Utilities.FilterResult
+@using Microsoft.AspNetCore.Components.Forms
+@model HYR_Blog.Areas.Admin.Pages.GetAllProductModel
+@{
+}
+@section style {
+    <link href="~/Admin/Css/forListProduct.css" rel="stylesheet" />
+}
+
+
+
+<div class="container" style="margin-bottom:15px">
+    <div class="row">
+        <form method="get">
+            <div class="col-4 col-sm-4">
+                <select name="CategoryId" class="form-select" asp-items="@Model.Categories">
+                    <option value="@null">مرتب سازی بر اساس دسته بندی</option>
+                </select>
+            </div>
+            <div class="col-4 col-sm-4">
+                <select name="Prise" class="form-select">
+                    <option value="@null">مرتب سازی بر اساس قیمت</option>
+                    <option value="1">کمترین قیمت</option>
+                    <option value="2">بیشترین قیمت</option>
+                </select>
+            </div>
+            <div class="col-4 col-sm-4" style="margin-top:1.5%">
+                <input class="form-control" type="text" name="ProductName" placeholder="نام محصول" />
+            </div>
+            <div class="col-4 col-sm-4" style="margin-top:1.5%">
+                <input class="form-control btn btn-success" type="submit" value="فیلتر" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<hr style="border-width:3px;border-color:red;max-width:90%;margin-bottom:18px" />
+<div class="container col-xl-10 col-12 mt-5" id="outer-card-container">
+    @foreach (var pro in Model.Products)
+    {
+
+        <div id="boxProduct">
+            <div id="card-main-container" class="mb-3">
+                <div class="col-md-3 col-lg-3">
+                    <img src="@pro.ImageUrl" width="100%">
+                </div>
+                <div class="col-md-6 col-lg-7">
+                    <h5 class="font-weight-bold"><a href="#" class="text-secondary">@pro.ProductName</a></h5>
+                    <div class="d-flex flex-row mb-1 mt-3 product-tag">
+                        <p class="bg-info p-1 pl-2 pr-2 mr-1 " style="display:inline-block;padding:5px;border-radius:100px"><a href="#">@(pro.PriseByDiscount ?? pro.Prise) تومان</a></p>
+                        <p class="bg-primary p-1 pl-2 pr-2" style="display:inline-block;padding:5px;border-radius:100px"><a href="#">دسته بندی : @pro.CategoryName</a></p>
+                    </div>
+                    <p class="mb-3">موجودی : @pro.Inventory</p>
+                    <div>
+                        <p class="list-inline-item"> <a href="#"> پست ویژه : <span class="fa @(pro.IsSpecial?"fa-check":"fa-close")"></span></a></p>
+
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-2">
+                    <h5 class="font-weight-bold">قیمت بدون تخفیف : @pro.Prise</h5>
+                    <a asp-area="Admin" asp-page="EditProduct" asp-route-ProductId="@pro.ProductId" style="background: #7F00FF; font-size: 13px !important;" class="btn btn-success text-white mr-1 p-2 pl-3 pr-3 font-weight-bold">
+                        مشاهده و ویرایش
+                    </a>
+                    <button onclick="DeleteProduct(@pro.ProductId)" style="background: red; font-size: 13px !important; border-radius:50px" class="btn btn-success text-white mr-1 p-2 pl-3 pr-3 font-weight-bold">
+                        حذف
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+@section Script
+{
+    <script>
+        function DeleteProduct(id) {
+            var dataPost = {
+                "ProductId": id
+            };
+            swal.fire({
+                title: "حذف محصول",
+                text: "از حذف اطمینان دارید ؟",
+                confirmButtonText: "بله",
+                showCancelButton:true,
+                cancelButtonText: "خیر"
+            }).then(function(result) {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: "/admin/GetAllProduct/DeleteProduct",
+                        type: "Post",
+                        data: dataPost,
+                        beforeSend: function(xhr) {
+                            xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+                        },
+                        failed: function() {
+                            ErrorAlert();
+                        },
+                        success: function() {
+                            location.reload();
+                        }
+
+                    });
+                }
+            });
+        }
+    </script>
+}

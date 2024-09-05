@@ -1,0 +1,51 @@
+﻿@page
+@model HYR_Blog.Areas.Admin.Pages.DiscountsModel
+@{
+}
+
+<div class="container" style="margin-bottom:15px">
+    <div class="row">
+      <form method="get">
+            <div class="col-4 col-sm-4">
+                <select name="IsActive" class="form-select">
+                    <option>همه</option>
+                    <option value="true">بر اساس فعال بودن</option>
+                    <option value="false">براساس غیر فعال بودن</option>
+                </select>
+            </div>
+            <div class="col-4 col-sm-4" style="margin-top:1.5%">
+                <input class="form-control" type="text" name="discountCode" placeholder="کد تخفیف" />
+            </div>
+            <div class="col-4 col-sm-4" style="margin-top:1.5%">
+                <input class="form-control btn btn-success" type="submit" value="فیلتر" />
+            </div>
+      </form>
+    </div>
+</div>
+
+
+<div class="container">
+    <table class="table table-bordered table-responsive table-striped">
+        <thead>
+            <tr>
+                <th>کد تخفیف</th>
+                <th>مقدار تخفیف به تومان</th>
+                <th>تاریخ اتمام</th>
+                <th>دفعات مجاز استفاده</th>
+                <th>دفعات استفاده شده</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.DiscountDtos)
+            {
+                <tr>
+                    <td>@item.DiscountText</td>
+                    <td>@item.DisCountAmount</td>
+                    <td>@item.EndDate</td>
+                    <td>@item.UseCountAllowed</td>
+                    <td>@item.UseCount</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

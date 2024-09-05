@@ -1,0 +1,573 @@
+﻿
+@page "{handler?}"
+@using HYR_Blog.CoreLayer.Services.ProductServices.Commands
+@using HYR_Blog.CoreLayer.Services.UserService.Queries
+@using HYR_Blog.CoreLayer.Utilities.Other
+@using HYR_Blog.CoreLayer.Utilities.Other.Directories
+@using System.Security.Claims
+@model HYR_Blog.Pages.ProductModel
+@inject IAddProductVisitService Addvisit
+@inject IGetAllProductUserBuyService productBuy
+@{
+    string? MyUrl = "";
+    if (Model.ProductDto != null)
+    {
+       
+
+        Addvisit.AddProductVisit(Model.ProductDto.ProductId);
+        int userId = User.Identity.IsAuthenticated ? int.Parse(User.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value) : 0;
+
+
+        bool IsUserBuyThisProduct = false;
+        foreach (var VARIABLE in productBuy.GetAllProductUserBuy(userId).data)
+        {
+            if (VARIABLE == Model.ProductDto.ProductId)
+                IsUserBuyThisProduct = true;
+        }
+    }
+
+}
+
+@section MetaTag{
+    <meta property="og:type" content="Product">
+    <meta name="description" content="@Model.ProductDto.MetaDescription">
+    <meta name="og:description" content="@Model.ProductDto.MetaDescription">
+    <meta name="twitter:description" content="@Model.ProductDto.MetaDescription">
+    <meta property="og:image" content="@FileManage.GetProductImageByName(Model.ProductDto.ImagesName.First())">
+    <meta property="og:image:type" content="@Model.ProductDto.ImagesName.First()">
+    <meta name="twitter:image" content="@Model.ProductDto.ImagesName.First()">
+    <meta name="keywords" content="@Model.ProductDto.KeyWorld" />
+    <meta name="title" content="@Model.ProductDto.MetaTitle"/>
+}
+
+
+@Html.AntiForgeryToken()
+
+<div class="container-main">
+    <div class="d-block">
+        <div class="page-content page-row">
+            <div class="main-row">
+                <div id="breadcrumb">
+                    <i class="mdi mdi-home"></i>
+
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li  class="breadcrumb-item"><a asp-page="index">خانه</a></li>
+                           @if (Model.ProductDto != null)
+                            {
+                                <li class="breadcrumb-item"><a href="#">@Model.ProductDto.CategoryName</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">@Model.ProductDto.ProductName</li>
+                            }
+                        </ol>
+                    </nav>
+
+                </div>
+                <div class="col-lg">
+                    <div class="product type-product">
+                        <div class="col-lg-5 col-xs-12 pr d-block" style="padding: 0;">
+                            <section class="product-gallery">
+                                <div class="gallery">
+                                    <div class="gallery-item">
+                                        <div>
+                                            <ul class="gallery-actions">
+
+                                                <li class="option-social">
+                                                    <a href="#" class="btn-option btn-option-social" data-toggle="modal" data-target="#option-social">
+                                                        <i class="mdi mdi-share"></i>
+                                                        <span>اشتراک</span>
+                                                    </a>
+                                                    <!-- Modal-option-social -->
+                                                    <div class="modal fade" id="option-social" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalCenterTitle">اشتراک گذاری</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="title">با استفاده از روش‌های زیر می‌توانید این صفحه را با دوستان خود به اشتراک بگذارید.</div>
+                                                                    @*<form action="#" class="email-sharing">
+                                                                        <h5 class="share-title">ارسال از طریق ایمیل</h5>
+                                                                        <div class="input-group-sharing">
+                                                                            <input type="email" class="share-email-address form-control" id="share-email">
+                                                                            <button class="btn-send-email btn btn-primary" type="submit">ارسال ایمیل</button>
+                                                                        </div>
+                                                                    </form>*@
+                                                                    <div class="share-options">
+                                                                        <div class="share-social-buttons text-center">
+                                                                            <a href="https://www.facebook.com/sharer/sharer.php?u=@MyUrl" title="facebook" class="share-social share-social-facebook">
+                                                                                <i class="mdi mdi-facebook"></i>
+                                                                            </a>
+                                                                            <a href="https://wa.me?text=@MyUrl" title="WhatsApp" class="share-social share-social-whatsapp">
+                                                                                <i class="mdi mdi-whatsapp"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-share-col">
+                                                                        <input class="ui-url-field" type="url" value="@MyUrl" readonly="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                              
+                                                <li class="Three-dimensional">
+                                                    <a href="#" class="btn-option btn-Three-dimensional" data-toggle="modal" data-target="#more-product">
+                                                        <i class="mdi mdi-more"></i>
+                                                        <span>نمایش بیشتر</span>
+                                                    </a>
+                                                    <div class="modal fade" id="more-product" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered more-product" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-body">
+                                                                    <div id="custom-events">
+                                                                        @foreach (var item in Model.ProductDto.ImagesName)
+                                                                        {
+
+
+                                                                            <img src="@FileManage.GetProductImageByName(item)" />
+
+                                                                        }
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="Three-dimensional">
+                                                    <a asp-page="products" class="btn-option btn-compare">
+                                                        <i class="mdi mdi-compare"></i>
+                                                        <span>همه محصولات</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="gallery-item">
+                                        <div class="gallery-img">
+                                            <a href="#">
+                                                <img class="zoom-img" id="img-product-zoom" src="@FileManage.GetProductImageByName(Model.ProductDto.ImagesName.First())"
+                                                     data-zoom-image="@FileManage.GetProductImageByName(Model.ProductDto.ImagesName.First())" width="411" />
+                                                <div id="gallery_01f" style="width:420px;float:right;">
+                                            </a>
+                                            <ul class="gallery-items owl-carousel owl-theme" id="gallery-slider">
+
+                                                @foreach (var item in Model.ProductDto.ImagesName)
+                                                {
+                                                    <li class="item">
+                                                        <a href="#" class="elevatezoom-gallery active" data-update=""
+                                                           data-image="@FileManage.GetProductImageByName(item)"
+                                                           data-zoom-image="@FileManage.GetProductImageByName(item)">
+                                                            <img src="@FileManage.GetProductImageByName(item)" width="100" />
+                                                        </a>
+                                                    </li>
+                                                }
+
+
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        </section>
+
+                    </div>
+                    <div class="col-lg-7 col-xs-12 pl mt-5 d-block">
+                        <section class="product-info">
+                            <div class="product-headline">
+                                <h1 class="product-title">
+                                    @Model.ProductDto.ProductName
+                                </h1>
+                                <div class="product-guaranteed text-success">
+                                    @Model.ProductDto.Visit
+                                    <span>بازدید</span>
+                                </div>
+                            </div>
+                            <div class="product-attributes">
+                                <div class="product-config">
+                                    <span class="product-title-en">@Model.ProductDto.ProductName</span>
+                                    <div class="product-rate">
+
+                                        @for (int i = 1; i <= Model.ProductDto.Score; i++)
+                                        {
+                                            <i class="fa fa-star active"></i>
+                                        }
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-config-wrapper">
+                                <div class="product-directory">
+                                    <ul>
+                                        <li>
+                                            <span>
+                                                <i class="fa fa-archive"></i> دسته:
+                                            </span>
+                                            <a href="#" class="product-link product-cat-title">@Model.ProductDto.CategoryName</a>
+
+                                        </li>
+
+                                        <li>
+                                            <span>
+                                                موجودی:
+                                            </span>
+                                            <a href="#" class="product-link product-tag-title">@Model.ProductDto.Inventory</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col=lg-6 col-md-6 col-xs-12 pr">
+                                    <div class="product-variants">
+                                    </div>
+                                    <div class="product-params pt-3">
+                                        <ul data-title="ویژگی‌های محصول">
+
+                                            @foreach (var item in Model.ProductDto.Properties.Take(5))
+                                            {
+                                                <li>
+                                                    <span>@item.Key: </span>
+                                                    <span>@item.Value</span>
+                                                </li>
+                                            }
+
+
+                                        </ul>
+                                    </div>
+                                    <div class="product-price-survey-question">
+                                        آیا قیمت مناسب‌تری سراغ دارید؟
+                                        <div class="answers">
+                                            <a href="#" class="product-price-survery-answer price-yes btn btn-secondary">بلی</a>
+                                            <a href="#" class="product-price-survery-answer price-no btn btn-secondary">خیر</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col=lg-6 col-md-6 col-xs-12 pr">
+                                    <div class="product-seller-info">
+                                        <div class="seller-info-changable">
+                                            <div class="product-seller-row vendor">
+                                                <span class="title"> فروشنده:</span>
+                                                <a href="#" class="product-name">فروشگاه HYR</a>
+                                            </div>
+                                            <div class="product-seller-row guarantee">
+                                                <span class="title"> کد محصول:</span>
+                                                <a href="#" class="product-name">@Model.ProductDto.ProductCode</a>
+                                            </div>
+                                            <div class="product-seller-row price">
+                                                <span class="title"> قیمت:</span>
+                                                <a href="#" class="product-name">
+                                                    <span class="amount">
+                                                        @Model.ProductDto.Prise.ToString("n0")
+                                                        <span>تومان</span>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="product-seller-row guarantee">
+                                                <span class="title mt-3"> تعداد:</span>
+                                                <div class="quantity pl">
+                                                    <input id="HowCount" type="number" min="1" max="@Model.ProductDto.Inventory" step="1" value="1"><div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>
+                                                </div>
+                                            </div>
+                                            <div class="product-seller-row add-to-cart">
+                                                <button onclick="AddCartItemOrCreateCart(@Model.ProductDto.ProductId)" class="btn-add-to-cart btn btn-primary">
+                                                    <span class="btn-add-to-cart-txt">افزودن به سبد خرید</span>
+                                                </button>
+                                                <span id="AddCartValidate" class="alert alert-success h-main-row"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="product-usp">
+                        <div class="product-feature">
+                            <div class="product-feature-col">
+                                <a href="#" class="product-feature-item">
+                                    <img src="~/SiteTemplate/assets/images/page-single-product/delivery.svg">
+                                    امکان تحویل
+                                    <br>
+                                    اکسپرس
+                                </a>
+                            </div>
+                            <div class="product-feature-col">
+                                <a href="#" class="product-feature-item">
+                                    <img src="~/SiteTemplate/assets/images/page-single-product/contact-us.svg">
+                                    ۷ روز هفته
+                                    <br>
+                                    ۲۴ ساعته
+                                </a>
+                            </div>
+                            <div class="product-feature-col">
+                                <a href="#" class="product-feature-item">
+                                    <img src="~/SiteTemplate/assets/images/page-single-product/payment-terms.svg">
+                                    امکان
+                                    <br>
+                                    پرداخت با انتقال وجه
+                                </a>
+                            </div>
+                            <div class="product-feature-col">
+                                <a href="#" class="product-feature-item">
+                                    <img src="~/SiteTemplate/assets/images/page-single-product/return-policy.svg">
+                                    هفت روز ضمانت بازگشت کالا
+                                </a>
+                            </div>
+                            <div class="product-feature-col">
+                                <a href="#" class="product-feature-item">
+                                    <img src="~/SiteTemplate/assets/images/page-single-product/origin-guarantee.svg">
+                                    ضمانت
+                                    <br>
+                                    اصل بودن کالا
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tabs">
+            <div class="tab-box">
+                <ul class="tab nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="Review-tab" data-toggle="tab" href="#Review" role="tab" aria-controls="Review" aria-selected="true">
+                            <i class="mdi mdi-glasses"></i>
+                            نقد و بررسی
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Specifications-tab" data-toggle="tab" href="#Specifications" role="tab" aria-controls="Specifications" aria-selected="false">
+                            <i class="mdi mdi-format-list-checks"></i>
+                            مشخصات
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="User-comments-tab" data-toggle="tab" href="#User-comments" role="tab" aria-controls="User-comments" aria-selected="false">
+                            <i class="mdi mdi-comment-text-multiple-outline"></i>
+                            نظرات کاربران
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col-lg">
+                <div class="tabs-content">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="Review" role="tabpanel" aria-labelledby="Review-tab">
+                            <h2 class="params-headline">توضیحات</h2>
+                            <section class="content-expert-summary">
+                                <div class="mask pm-3" style="overflow-wrap:anywhere">
+                                    <div class="mask-text">
+
+                                        @Model.ProductDto.Description
+                                    </div>
+                                    <a href="#" class="mask-handler">
+                                        <span class="show-more">+ ادامه مطلب</span>
+                                        <span class="show-less">- بستن</span>
+                                    </a>
+                                    <div class="shadow-box"></div>
+                                </div>
+                            </section>
+                           
+                        </div>
+                        <div class="tab-pane fade" id="Specifications" role="tabpanel" aria-labelledby="Specifications-tab">
+                            <article>
+                                <h2 class="params-headline">
+                                    مشخصات فنی
+                                    <span>@Model.ProductDto.ProductName</span>
+                                </h2>
+                                <section>
+                                    <ul class="params-list">
+                                        @foreach (var item in Model.ProductDto.Properties)
+                                        {
+
+                                            <li class="params-list-item">
+                                                <div class="params-list-key">
+                                                    <span class="block"> @item.Value  </span>
+                                                </div>
+                                                <div class="params-list-value">
+                                                    <span class="block">
+                                                        @item.Key
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        }
+
+                                    </ul>
+                                </section>
+
+                            </article>
+                        </div>
+                        <div class="tab-pane fade" id="User-comments" role="tabpanel" aria-labelledby="User-comments-tab">
+                            <div class="comments">
+                                <div class="comments-summary">
+                                    <div class="col-lg-6 col-md-6 col-xs-12 pr">
+                                        <div class="comments-summary-note">
+                                            <h6>شما هم می‌توانید در مورد این کالا نظر بدهید.</h6>
+                                            @if (!User.Identity.IsAuthenticated)
+                                            {
+                                                <p>
+                                                    برای ثبت نظر، لازم است ابتدا وارد حساب کاربری خود شوید. اگر حساب دارید <ins><a asp-page="user/login">وارد</a></ins> شوید یا برای <ins><a asp-page="user/register">ثبت نام</a></ins> کلیک کنید
+                                                </p>
+                                            }
+                                            else
+                                            {
+                                                <div>
+                                                    <form asp-asp-page="product" asp-page-handler="GiveScore" method="post">
+                                                        <div>
+                                                            <label class="form-label">عنوان</label>
+                                                            <input name="Title" class="form-control" />
+                                                        </div>
+                                                        <div>
+                                                            <label class="form-label">متن نظر</label>
+                                                            <textarea name="Description" class="form-control"></textarea>
+                                                        </div>
+                                                        <div style="margin-top:5%">
+                                                            <label class="form-label">امتیاز شما :</label>
+                                                            <input name="Score" id="score" type="range" min="1" max="5" style="color:blue" value="5" />
+                                                            <span id="scoreValue">5</span>
+                                                        </div>
+                                                        <div style="margin-top:5%">
+                                                            <button type="submit" class="btn-add-comment btn btn-secondary">افزودن نظر جدید</button>
+                                                        </div>
+                                                        <input name="productId" type="hidden" value="@Model.ProductDto.ProductId"/>
+                                                    </form>
+                                                </div>
+
+                                            }
+
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <div class="product-comment-list">
+                                        <ul class="comment-list">
+                                            @if (Model.ProductDto.Comments.Count <= 0)
+                                            {
+                                                <div>برای این محصول هنوز نظری ثبت نشده است </div>
+                                            }
+                                            else
+                                            {
+                                                @foreach (var item in Model.ProductDto.Comments)
+                                                {
+
+
+                                                    <li>
+                                                        <div class="col-lg-3 pr">
+                                                            <section>
+                                                                <div class="comments-user-shopping">
+                                                                    @item.UserName
+                                                                    <div class="cell-date">
+                                                                        @DateTimeConverter.ConvertToPersian(item.CreationDate)
+                                                                    </div>
+                                                                    <div class="message-light"><i class="fa fa-thumbs-o-up"></i>خرید این محصول را توصیه می‌کنم</div>
+                                                                </div>
+                                                            </section>
+                                                        </div>
+                                                        <div class="col-lg-9 pl">
+                                                            <div class="article">
+                                                                <ul class="comment-text">
+                                                                    <div class="header">
+                                                                        <div>@item.Title</div>
+                                                                        <div class="product-rate pl">
+
+
+                                                                            @for (int i = 1; i <= item.Score; i++)
+                                                                            {
+                                                                                <i class="fa fa-star active"></i>
+                                                                            }
+
+
+
+                                                                        </div>
+                                                                        <p>@item.Description</p>
+                                                                    </div>
+                                                                    
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+
+
+                                                }
+                                            }
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section script
+{
+    <script src="~/SiteTemplate/assets/js/vendor/lightgallery-all.js"></script>
+    <script src="~/SiteTemplate/assets/js/vendor/jquery.ez-plus.js"></script>
+    <script>
+        $(document).ready(function () {
+            ScoreConfig();
+        });
+        function ScoreConfig() {
+
+            $("#score").change(function () {
+                $("#scoreValue").html($("#score").val());
+            });
+
+        }
+
+
+
+        function AddCartItemOrCreateCart(id) {
+            var HowCount = $("#HowCount").val();
+            $.ajax({
+                url: "/product",
+                type:"POST",
+                data: {productId:id,HowCount:HowCount},
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                success: function (data) {
+                    $("#AddCartValidate").html("");
+                    $("#AddCartValidate").html(data);
+                    GetCartWithAjax();
+                    setTimeout(function () {
+                        $("#AddCartValidate").html("");
+                    }, 5000);
+                    
+                }
+            });
+        }
+        
+    </script>
+}
+

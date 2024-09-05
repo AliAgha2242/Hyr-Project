@@ -1,0 +1,45 @@
+﻿@using HYR_Blog.CoreLayer.Dtos.CategoryDto
+@model List<IndexCategoryDto>
+
+@section CategoryMetaTag {
+
+    @foreach (var item in Model)
+    {
+        <meta name="description" content="@item.MetaDescription" />
+        <meta name="keywords" content="@item.KeyWorld" />
+    }
+}
+
+@foreach (var item in Model)
+{
+    <li id="nav-menu-item" class="menu-item nav-overlay" data-id="190">
+        <a href="/products?CategoryId = @item.CategoryId" class="current-link-menu">
+            @item.CategoryName
+        </a>
+    </li>
+}
+
+<li id="nav-menu-item" class="menu-item nav-overlay" data-id="190">
+    <a class="current-link-menu">
+        درباره ما
+    </a>
+</li>
+
+<li id="nav-menu-item" class="menu-item nav-overlay" data-id="190">
+    <a asp-page="index" class="current-link-menu">
+       صفحه اصلی
+    </a>
+</li>
+@if (!User.Identity.IsAuthenticated)
+{
+    <li id="nav-menu-item" class="menu-item nav-overlay" data-id="190">
+        <a asp-page="/User/Register" class="current-link-menu">
+            ثبت نام در سایت
+        </a>
+    </li>
+    <li id="nav-menu-item" class="menu-item nav-overlay" data-id="190">
+        <a asp-page="/User/Login" class="current-link-menu">
+            ورود به سایت
+        </a>
+    </li>
+}

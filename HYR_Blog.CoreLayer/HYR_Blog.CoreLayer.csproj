@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Globalization.Calendars" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HYR_Blog.DataLayer\HYR_Blog.DataLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Dtos\OrderDetailDto\" />
+    <Folder Include="Services\CommentServices\Queries\" />
+    <Folder Include="Services\DisCountService\Queries\" />
+    <Folder Include="Services\OrderDetailServices\Commands\" />
+    <Folder Include="Services\OrderDetailServices\Queries\" />
+    <Folder Include="Services\OrderStatusServices\Queries\" />
+    <Folder Include="Utilities\Mapper\CommentMapper\" />
+    <Folder Include="Utilities\Mapper\OrderDetailMapper\" />
+    <Folder Include="Utilities\Mapper\OrderMapper\" />
+    <Folder Include="Utilities\Mapper\OrderStatusMapper\" />
+    <Folder Include="Utilities\Mapper\PersonMapper\" />
+    <Folder Include="Utilities\Mapper\ProductMapper\" />
+    <Folder Include="Utilities\Other\Directories\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,169 @@
+﻿@page "{handler?}"
+@using Microsoft.AspNetCore.Components.Forms
+@using HYR_Blog.CoreLayer.Dtos.CategoryDto
+@model HYR_Blog.Areas.Admin.Pages.CreateProductModel
+@{
+}
+
+<div class="container">
+    <div class="box-header with-border">
+        <h3 class="box-title">افزودن محصول</h3>
+    </div>
+    <!-- /.box-header -->
+    <!-- form start -->
+    <form role="form" method="post" enctype="multipart/form-data">
+        <div class="box-body">
+            <div class="form-group col-md-6">
+                <label asp-for="ProductName"></label>
+                <input asp-for="ProductName" type="text" class="form-control" id="exampleInputEmail1" placeholder="نام محصول">
+                <span asp-validation-for="ProductName" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="Inventory"></label>
+                <input asp-for="Inventory" type="number" class="form-control" id="exampleInputPassword1" placeholder="موجودی">
+                <span asp-validation-for="Inventory" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="Prise"></label>
+                <input asp-for="Prise" type="text" class="form-control" id="exampleInputPassword1" placeholder="قیمت">
+                <span asp-validation-for="Prise" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="PriseByDiscount"></label>
+                <input asp-for="PriseByDiscount" type="text" class="form-control" id="exampleInputPassword1" placeholder="قیمت با تخفیف">
+                <span asp-validation-for="PriseByDiscount" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="Weight"></label>
+                <input asp-for="Weight" type="text" class="form-control" id="exampleInputPassword1" placeholder="وزن همراه بسته بندی">
+                <span asp-validation-for="Weight" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="RelationKey"></label>
+                <input asp-for="RelationKey" type="text" class="form-control" id="exampleInputPassword1" placeholder="نام محصولات مرتبط">
+                <span asp-validation-for="RelationKey" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+            </div>
+
+            <div class="form-group col-md-12 checkbox">
+                <label style="display:inline-block;padding-left:25px" asp-for="IsSpecial">
+                </label>
+                <input asp-for="IsSpecial" type="checkbox">
+                <span asp-validation-for="IsSpecial" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+            </div>
+            <div class="form-group col-md-12">
+                <label asp-for="Files" class="form-label"></label>
+                <input asp-for="Files"  accept=".jpg , .png" multiple>
+                <span asp-validation-for="Files" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="Description"></label>
+                <textarea asp-for="Description" style="height:100px" class="form-control" type="text"></textarea>
+                <span asp-validation-for="Description" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="MetaTitle"></label>
+                <textarea asp-for="MetaTitle" style="height:100px" class="form-control" type="text"></textarea>
+                <span asp-validation-for="MetaTitle" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="MetaDescription"></label>
+                <textarea asp-for="MetaDescription" style="height:100px" class="form-control" type="text"></textarea>
+                <span asp-validation-for="MetaDescription" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="MetaTag"></label>
+                <textarea asp-for="MetaTag" style="height:100px" class="form-control" type="text"></textarea>
+                <span asp-validation-for="MetaTag" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="KeyWorld"></label>
+                <textarea asp-for="KeyWorld" style="height:100px" class="form-control" type="text"></textarea>
+                <span asp-validation-for="KeyWorld" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+            </div>
+
+            <div class="form-group col-md-6 col-sm-9">
+                <label asp-for="CategoryId"></label>
+                <select asp-for="CategoryId" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                    <option value="null">انتخاب کنید</option>
+                    @foreach (var VARIABLE in Model.categories)
+                    {
+                        <option value="@VARIABLE.CategoryId">@VARIABLE.CategoryName</option>
+                    }
+                </select>
+                <span asp-validation-for="CategoryId" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+
+            </div>
+            <div class="form-group col-md-6">
+                <div class="col-md-12">
+                    <label asp-for="ProductPropertyDtos" class="form-label"></label>
+                </div>
+                @Html.AntiForgeryToken()
+                <div>
+                   
+                    
+                </div>
+               
+                <div>
+                    <input class="form-control col-md-5" id="PropertyValue" type="text" placeholder="مقدار ویژگی">
+                    <input class="form-control col-md-5" id="PropertyKey" type="text" placeholder="نام ویژگی" />
+                    <span id="PropertyKeyValidate"></span>
+                    <span id="PropertyValueValidate"></span>
+                </div>
+               
+
+                <button class="btn btn-primary col-md-2" onclick="CreateProductProperty()" type="button" id="btnProperty">اضافه کردن</button>
+            </div>
+        </div>
+
+        <!-- /.box-body -->
+        <div class="form-group col-md-12">
+            <input class="form-control btn btn-primary" value="افزودن محصول" type="submit">
+        </div>
+
+    </form>
+</div>
+
+@section Script
+{
+    <script>
+        function CreateProductProperty() {
+            var dataPost = {
+                "key": $("#PropertyKey").val(),
+                "value": $("#PropertyValue").val()
+            };
+            if ($("#PropertyKey").val() === null || $("#PropertyKey").val() === "undefind" || $("#PropertyKey").val() === "") {
+                $("#PropertyKeyValidate").html("نباید خالی باشد");
+                return ;
+            }
+            if ($("#PropertyValue").val() === null || $("#PropertyValue").val() === "undefind" || $("#PropertyValue").val() === "") {
+                $("#PropertyValueValidate").html("نباید خالی باشد");
+                return;
+            }
+
+            $.ajax({
+                url: "/Admin/CreateProduct/CreateProductProperty",
+                type: "post",
+                data: dataPost,
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                success: function () {
+                    $("#btnProperty").css("background-color", "green");  
+                    $("#PropertyKey").val("");
+                    $("#PropertyValue").val("");
+                    $("#PropertyValueValidate").html("");
+                    $("#PropertyKeyValidate").html("");
+                },
+                failed: function () {
+                    $("#PropertyKey").css("background-color", "red");
+                    ErrorAlert();
+                }
+            });
+        }
+
+    </script>
+}
+

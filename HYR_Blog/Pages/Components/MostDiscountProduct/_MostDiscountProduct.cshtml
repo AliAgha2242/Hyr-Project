@@ -1,0 +1,252 @@
+﻿@using HYR_Blog.CoreLayer.Dtos.ProductDto
+@using HYR_Blog.CoreLayer.Utilities.Other.Directories
+@model List<MostDiscountProductDto>
+
+<div class="col-12">
+    <div class="slider-widget-products slider-content-tabs slider-amazing-product">
+        <div class="widget widget-product card slider-content-tabs">
+            <header class="card-header">
+                <span class="title-one">محصولات شگفت انگیز</span>
+                <h3 class="card-title"></h3>
+            </header>
+            <div class="product-carousel product-amazing owl-carousel owl-theme owl-rtl owl-loaded owl-drag">
+                <div class="owl-stage-outer">
+                    <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1162px;">
+
+                        @for (int i = 0; i < Model.Count; i++)
+                        {
+                            <div class="owl-item tab-item active" style="width: 222.313px; margin-left: 10px;">
+                                <div class="item">
+                                    <a asp-page="product" asp-route-slug="@Model[i].Slug" class="d-block hover-img-link">
+                                        <img src="@FileManage.GetProductImageByName(Model[i].FirstImageName)" alt="@Model[i].ProductName" title="@Model[i].ProductName">
+                                    </a>
+                                    <h2 class="post-title">
+                                        <a asp-page="product" asp-route-slug="@Model[i].Slug">
+                                            @Model[i].ProductName
+                                        </a>
+                                    </h2>
+                                    <div class="price">
+                                        <del><span>@Model[i].Prise.ToString("n0")<span>تومان</span></span></del>
+                                        <ins><span>@Model[i].PriseByDiscount.ToString("n0")<span>تومان</span></span></ins>
+                                    </div>
+                                    <div class="countdown-ti">
+                                        موجودی در انبار :  @Model[i].Inventory
+                                    </div>
+                                </div>
+                            </div>
+
+                            if (i > 1 && i < Model.Count - 1)
+                            {
+                                <div class="owl-item tab-item" style="width: 222.313px; margin-left: 10px;">
+                                    <div class="item">
+                                        <a asp-page="product" asp-route-slug="@Model[i].Slug" class="d-block hover-img-link">
+                                            <img src="@FileManage.GetProductImageByName(Model[i].FirstImageName)" alt="@Model[i].ProductName" title="@Model[i].ProductName">
+                                        </a>
+                                        <h2 class="post-title">
+                                            <a asp-page="product" asp-route-slug="@Model[i].Slug">
+                                                @Model[i].ProductName
+                                            </a>
+                                        </h2>
+                                        <div class="price">
+                                            <del><span>@Model[i].Prise<span>تومان</span></span></del>
+                                            <ins><span>@Model[i].PriseByDiscount<span>تومان</span></span></ins>
+                                        </div>
+                                        <div class="countdown-timer">
+                                            موجودی در انیار :  @Model[i].Inventory
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+
+                        
+
+                    </div>
+                </div>
+                <div class="owl-nav">
+                    <button type="button" role="presentation" class="owl-prev disabled">
+                        <i class="fa fa-angle-right"></i>
+                    </button>
+                    <button type="button" role="presentation" class="owl-next">
+                        <i class="fa fa-angle-left"></i>
+                    </button>
+                </div>
+                <div class="owl-dots disabled"></div>
+                <div class="owl-nav"><button type="button" role="presentation" class="owl-prev disabled"><i class="fa fa-angle-right"></i></button><button type="button" role="presentation" class="owl-next"><i class="fa fa-angle-left"></i></button></div><div class="owl-dots disabled"></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev disabled"><i class="fa fa-angle-right"></i></button><button type="button" role="presentation" class="owl-next"><i class="fa fa-angle-left"></i></button></div><div class="owl-dots disabled"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-9 col-md-9 col-xs-12 pl">
+    <div class="content-widget-amazing">
+        <section id="amazing-slider" class="carousel slide carousel-fade card" data-ride="carousel">
+            <div class="row m-0">
+                <ol class="carousel-indicators pr-0 d-flex flex-column col-lg-3">
+
+
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        @if (i == 0)
+                        {
+                            <li class="active" data-target="#amazing-slider" data-slide-to="@i">
+                                <span>@Model[i].CategoryName</span>
+                            </li>
+                        }
+                        else
+                        {
+                            <li data-target="#amazing-slider" data-slide-to="@i" class="">
+                                <span>@Model[i].CategoryName</span>
+                            </li>
+                        }
+
+                    }
+
+                </ol>
+                <div class="carousel-inner p-0 col-12 col-lg-9">
+
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        if (i == 0)
+                        {
+                            <div class="carousel-item active">
+                                <div class="row m-0">
+                                    <div class="right-col col-5 d-flex align-items-center">
+                                        <a asp-page="product" asp-route-slug="@Model[i].Slug" class="w-100 text-center img-link-amazing">
+                                            <img src="@FileManage.GetProductImageByName(Model[i].FirstImageName)"
+                                                 class="img-fluid" alt="@Model[i].ProductName" title="@Model[i].ProductName">
+                                        </a>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="discount">
+                                            <span class="discount-percent">
+                                                @Model[i].DiscountPercent
+                                                <i class="fa fa-percent"></i>
+                                            </span>
+                                        </div>
+                                        <h2 class="product-title">
+                                            <a asp-page="product" asp-route-slug="@Model[i].Slug"> @Model[i].ProductName</a>
+                                        </h2>
+                                        <div class="price text-center">
+                                            <del><span>@Model[i].Prise.ToString("n0")<span>تومان</span></span></del>
+                                            <ins><span>@Model[i].PriseByDiscount.ToString("n0")<span>تومان</span></span></ins>
+                                        </div>
+                                        <ul class="list-group">
+
+                                            @foreach (var item in Model[i].Properties)
+                                            {
+                                                <li class="list-group-item">
+                                                    <i class="fa fa-check"></i>
+                                                    <span class="title">@item.Value: </span>
+                                                    <span class="text">@item.Key </span>
+                                                </li>
+                                            }
+
+                                        </ul>
+                                        <div class="countdown-timer">
+                                            موجودی انبار : @Model[i].Inventory
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else if (i > 1 && i < Model.Count - 1)
+                        {
+                            <div class="carousel-item">
+                                <div class="row m-0">
+                                    <div class="right-col col-5 d-flex align-items-center">
+                                        <a asp-page="product" asp-route-slug="@Model[i].Slug" class="w-100 text-center img-link-amazing" >
+                                            <img src="@FileManage.GetProductImageByName(Model[i].FirstImageName)"
+                                                 class="img-fluid" alt="@Model[i].ProductName" title="@Model[i].ProductName">
+                                        </a>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="discount">
+                                            <span class="discount-percent">
+                                                @Model[i].DiscountPercent
+                                                <i class="fa fa-percent"></i>
+                                            </span>
+                                        </div>
+                                        <h2 class="product-title">
+                                            <a asp-page="product" asp-route-slug="@Model[i].Slug"> @Model[i].ProductName </a>
+                                        </h2>
+                                        <div class="price text-center">
+                                            <del><span>@Model[i].Prise.ToString("n0")<span>تومان</span></span></del>
+                                            <ins><span>@Model[i].PriseByDiscount.ToString("n0")<span>تومان</span></span></ins>
+                                        </div>
+                                        <ul class="list-group">
+
+
+                                            @foreach (var item in Model[i].Properties)
+                                            {
+                                                <li class="list-group-item">
+                                                    <i class="fa fa-check"></i>
+                                                    <span class="title">@item.Value: </span>
+                                                    <span class="text">@item.Key </span>
+                                                </li>
+                                            }
+
+
+
+                                        </ul>
+                                        <div class="countdown-timer">
+                                            موجودی انبار : @Model[i].Inventory
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="carousel-item  finished">
+                                <div class="row m-0">
+                                    <div class="right-col col-5 d-flex align-items-center">
+                                        <a asp-page="product" asp-route-slug="@Model[i].Slug" class="w-100 text-center img-link-amazing" >
+                                            <img src="@FileManage.GetProductImageByName(Model[i].FirstImageName)"
+                                                 class="img-fluid" alt="@Model[i].ProductName" title="@Model[i].ProductName">
+                                        </a>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="discount">
+                                            <span class="discount-percent">
+                                                @Model[i].DiscountPercent
+                                                <i class="fa fa-percent"></i>
+                                            </span>
+                                        </div>
+                                        <h2 class="product-title">
+                                            <a asp-page="product" asp-route-slug="@Model[i].Slug">
+                                                @Model[i].ProductName
+                                            </a>
+                                        </h2>
+                                        <div class="price text-center">
+                                            <del><span>@Model[i].Prise.ToString("n0")<span>تومان</span></span></del>
+                                            <ins><span>@Model[i].PriseByDiscount.ToString("n0")<span>تومان</span></span></ins>
+                                        </div>
+                                        <ul class="list-group">
+
+
+                                            @foreach (var item in Model[i].Properties)
+                                            {
+                                                <li class="list-group-item">
+                                                    <i class="fa fa-check"></i>
+                                                    <span class="title">@item.Value: </span>
+                                                    <span class="text">@item.Key </span>
+                                                </li>
+                                            }
+
+
+
+                                        </ul>
+                                        <div class="countdown-timer">
+                                            موجودی انبار : @Model[i].Inventory
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

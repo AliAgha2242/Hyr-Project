@@ -1,0 +1,217 @@
+﻿@page
+@using HYR_Blog.CoreLayer.Utilities.Other.Directories
+@model HYR_Blog.Pages.ProductsModel
+
+@{
+
+}
+
+<div class="col-lg-12 col-md-12 col-xs-12 pl">
+    <div class="shop-archive-content mt-3 d-block">
+        <div class="archive-header">
+            <h2 class="archive-header-title">آرشیو محصولات</h2>
+            <div class="sort-tabs mt-0 d-inline-block pr">
+                <h4>مرتب&zwnj;سازی بر اساس :</h4>
+            </div>
+            <div class="nav-sort-tabs-res">
+                <ul class="nav sort-tabs-options" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-page="products"  role="tab" aria-controls="Most-visited" aria-selected="true">همه</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-page="products" asp-route-OrderBy="1" asp-route-PageId="@Request.Query["PageId"]" asp-route-ProductName="@Request.Query["ProductName"]" asp-route-CategoryId="@Request.Query["CategoryId"]" role="tab" aria-controls="Most-visited" aria-selected="true">پربازدیدترین</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-page="products" asp-route-OrderBy="2" asp-route-PageId="@Request.Query["PageId"]" asp-route-ProductName="@Request.Query["ProductName"]" asp-route-CategoryId="@Request.Query["CategoryId"]" role="tab" aria-controls="Bestselling" aria-selected="false">پرفروش&zwnj;ترین&zwnj;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-page="products" asp-route-OrderBy="3" asp-route-PageId="@Request.Query["PageId"]" asp-route-ProductName="@Request.Query["ProductName"]" asp-route-CategoryId="@Request.Query["CategoryId"]" role="tab" aria-controls="Most-Popular" aria-selected="false">محبوب&zwnj;ترین</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" asp-page="products" asp-route-OrderBy="4" asp-route-PageId="@Request.Query["PageId"]" asp-route-ProductName="@Request.Query["ProductName"]" asp-route-CategoryId="@Request.Query["CategoryId"]" role="tab" aria-controls="newest" aria-selected="false">جدیدترین</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" asp-page="products" asp-route-OrderBy="5" asp-route-PageId="@Request.Query["PageId"]" asp-route-ProductName="@Request.Query["ProductName"]" asp-route-CategoryId="@Request.Query["CategoryId"]" role="tab" aria-controls="cheapest" aria-selected="false">ارزان&zwnj;ترین</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" asp-page="products" asp-route-OrderBy="6" asp-route-PageId="@Request.Query["PageId"]" asp-route-ProductName="@Request.Query["ProductName"]" asp-route-CategoryId="@Request.Query["CategoryId"]" role="tab" aria-controls="most-expensive" aria-selected="false">گران&zwnj;ترین</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="product-items">
+            <div class="tab-content" id="myTabContent">
+                <div class="row">
+                    @if (Model.Products.Products.Count > 0)
+                    {
+
+                        @foreach (var item in Model.Products.Products)
+                        {
+                            <div class="col-lg-3 col-md-3 col-xs-12 order-1 d-block mb-3">
+                                <section class="h-100 product-box product product-type-simple">
+                                    <div class="thumb">
+                                        <div>
+                                            <button id="BtnAddCart@(item.ProductId)" onclick="AddItemInCartProduct(@item.ProductId)" style="color:mediumblue" class="adplacement-container-row archive-header bg-warning btn btn-dark p-2">افزودن به سبد خرید</button>
+                                        </div>
+                                        <a asp-page="product" asp-route-slug="@item.Slug" class="d-block">
+
+                                            <div class="product-rate">
+                                                @for (int i = 1; i <= 5; i++)
+                                                {
+                                                    <i class="fa fa-star @((item.Score >= i )?"active":"")"></i>
+                                                }
+
+
+                                            </div>
+                                            <img width="400" height="auto" src="@FileManage.GetProductImageByName(item.ProductFirstImageName)">
+                                        </a>
+                                    </div>
+
+                                    <div>
+                                        <div class="title">
+                                            <a asp-page="Product" asp-route-Slug="@item.Slug">  @item.ProductName</a>
+                                        </div>
+                                        <div class="price">
+                                            @if (item.PriseByDiscount > 0)
+                                            {
+                                                <span class="amount">
+                                                    <del>@item.Prise.ToString("n0")</del>
+                                                    @item.PriseByDiscount.ToString("n0")
+                                                    <span>تومان</span>
+                                                </span>
+                                            }
+                                            else
+                                            {
+                                                <span class="amount">
+                                                    @item.Prise.ToString("n0")
+                                                    <span>تومان</span>
+                                                </span>
+                                            }
+                                        </div>
+                                    </div>
+                                
+                                </section>
+                            </div>
+
+                        }
+
+                    }
+                    else
+                    {
+                        <div class="alert bg-danger d-404 font-weight-bold " style="color: antiquewhite;font-size: larger;">
+                            محصولی یافت نشد
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="bg-dark d-404 p-1" style="color:antiquewhite">
+            محصولات مرتبط
+        </div>
+        <div class="product-items">
+            <div class="tab-content" id="myTabContent">
+                <div class="row">
+
+
+                    @foreach (var item in Model.Products.RelatedProduct)
+                    {
+                        <div class="col-lg-3 col-md-3 col-xs-12 order-1 d-block mb-3">
+                            <section class="product-box h-100 product product-type-simple">
+                                <div class="thumb">
+                                    <a asp-page="Product" asp-route-Slug="@item.Slug">
+
+                                        <div class="product-rate">
+
+
+                                            @for (int i = 1; i <= 5; i++)
+                                            {
+                                                <i class="fa fa-star @((item.Score >= i )?"active":"")"></i>
+                                            }
+
+
+                                        </div>
+                                        <img width="400" height="auto" src="@FileManage.GetProductImageByName(item.ProductFirstImageName)">
+                                    </a>
+                                </div>
+                                <div class="title">
+                                    <a asp-page="Product" asp-route-Slug="@item.Slug">  @item.ProductName</a>
+                                </div>
+                                <div class="price">
+                                    @if (item.PriseByDiscount != null && item.PriseByDiscount > 0)
+                                    {
+                                        <span class="amount">
+                                            <del>@item.Prise.ToString("n0")</del>
+                                            @item.PriseByDiscount.ToString("n0")
+                                            <span>تومان</span>
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="amount">
+                                            @item.Prise.ToString("n0")
+                                            <span>تومان</span>
+                                        </span>
+                                    }
+                                </div>
+                            </section>
+                        </div>
+                    }
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+@section Script {
+    <script>
+        // function AddItemInCartProduct(ProductId){
+        //     console.log(ProductId);
+        //     $.ajax({
+        //         url: "/product",
+        //         type: "POST",
+        //         data: { productId: ProductId },
+        //         beforeSend: function (xhr) {
+        //             xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+        //         },
+        //         success: function (data) {
+        //             $("#BtnAddCart").html("");
+        //             $("#BtnAddCart").html(data);
+        //             console.log(data);
+        //             GetCartWithAjax();
+        //         }
+        //     });
+
+
+        function AddItemInCartProduct(ProductId) {
+            $.ajax({
+                url: "/Products",
+                data: { productId: ProductId },
+                type: "Post",
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                success: function (data) {
+                    $("#BtnAddCart"+ProductId).html("");
+                    $("#BtnAddCart"+ProductId).html(data);
+                    GetCartWithAjax();
+                    setTimeout(() => {
+                        $("#BtnAddCart" + ProductId).html("افزودن به سبد خرید");
+                    },3000);
+                }
+            });
+        }
+    </script>
+}

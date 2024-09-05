@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\HYR_Blog.props" />
+</Project>

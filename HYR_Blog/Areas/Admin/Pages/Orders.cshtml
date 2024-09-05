@@ -1,0 +1,275 @@
+﻿@page "{handler?}"
+@model HYR_Blog.Areas.Admin.Pages.OrdersModel
+@{
+}
+@Html.AntiForgeryToken()
+
+
+
+
+<div class="container" style="margin-bottom:15px">
+    <div class="row">
+        <form method="get">
+            <div class="col-4 col-sm-4">
+                <select name="IsActive" class="form-select">
+                    <option value="@true">مرتب سازی بر اساس بیشترین خرید</option>
+                    <option value="@false">مرتب سازی بر اساس کمترین خرید</option>
+                </select>
+            </div>
+            <div class="col-4 col-sm-4">
+                <select name="UserRole" class="form-select">
+                    <option value="@null">مرتب سازی بر اساس نقش کاربر</option>
+                    <option value="1">فقط ادمین ها</option>
+                    <option value="2">فقط مشتری ها</option>
+                    <option value="3">فقط کاربران معمولی </option>
+                </select>
+            </div>
+            <div class="col-4 col-sm-4" style="margin-top:1.5%">
+                <input class="form-control" type="text" name="UserName" placeholder="نام محصول" />
+            </div>
+            <div class="col-4 col-sm-4" style="margin-top:1.5%">
+                <input class="form-control btn btn-success" type="submit" value="فیلتر" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+<div class="modal" id="OrderStatusModal" tabindex="-1" role="dialog" aria-labelledby="EditCategoryModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLongTitle">ویرایش دسته بندی</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+
+                    <div style="padding:2%;">
+                        <input type="hidden" id="OrderIdInput" />
+                        <input type="hidden" id="PriotityInput" />
+                        <label>کد مرسوله پستی را وارد کنید </label>
+                        <input id="SendCodeInput" style="background-color:khaki" type="number" class="form-control" />
+                        <span id="SendCodeValidate"></span>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
+                <button type="button" class="btn btn-primary" onclick="ChengeStatusWithSendCode()">ذخیره تعغیرات</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<hr />
+<div class="container col-12 mt-5" id="outer-card-container" style=" border:solid;padding:10px;">
+    @foreach (var pro in Model.Orders)
+    {
+        <div class="row">
+            <div id="boxProduct">
+                <div id="card-main-container" class="mb-3">
+                    <div class="col-12 col-lg-3 mb-4 mb-lg-0">
+                        <h5 class="font-weight-bold"><a href="#" class="text-secondary">@pro.PersonName نام خریدار : </a></h5>
+                        <div class="d-flex flex-row mb-1 mt-3 product-tag">
+                            <p class="bg-info p-1 pl-2 pr-2 mr-1 " style="display:inline-block;padding:5px;border-radius:100px"><a href="#">@pro.SumPrise تومان</a></p>
+                        </div>
+                        <p class="mb-3">موجودی : @pro.CreationDate</p>
+
+                    </div>
+                    <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+
+                        @foreach (var item in pro.NameAndCountProduct.ToList())
+                        {
+
+                            <div style="margin-bottom: 3px;display:flex">
+                                <span class=" btn btn-primary btn-sm m-5 d-inline">@item.Key</span>
+                                <span class="btn btn-warning btn-sm m-5 position-absolute d-inline" style="float:left">@item.Value عدد</span>
+                            </div>
+                        }
+
+
+
+                    </div>
+                    <div class="col-md-3 col-lg-2 mb-4 mb-lg-0">
+                        <p class="mb-3"><button type="button" class="btn btn-primary">وضعیت :  @pro.Status</button></p>
+                        <a onclick="NextStatus(@pro.StatusPriority,@pro.OrderId)" style="background: #7F00FF; font-size: 13px !important;" class="btn btn-success text-white mr-1 p-2 pl-3 pr-3 font-weight-bold">
+                            تبدیل وضعیت
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+
+
+@* <div class="container col-12 mt-5" id="outer-card-container">
+    @foreach (var item in Model.Orders)
+    {
+        <div id="boxProduct">
+            <div id="card-main-container" class="mb-3">
+                <div class="col-md-3 col-lg-4">
+                    <h5 class="font-weight-bold">@item.PersonName</h5>
+                    <div class="d-flex flex-row mb-1 mt-3 product-tag">
+                        <p class="bg-info p-1 pl-2 pr-2 mr-1 " style="display:inline-block;padding:5px;border-radius:100px;padding:2px">@item.SumPrise تومان</p>
+                        <p class="bg-primary p-1 pl-2 pr-2" style="display:inline-block;padding:5px;border-radius:100px">@item.SerialNumber : کد پیگیری</p>
+                    </div>
+                    <p class="mb-3"><button type="button" class="btn btn-primary">وضعیت :  @item.Status</button></p>
+                    <div>
+                        <p class="list-inline-item">@item.CreationDate</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-4">
+                    <label class="form-control">محصولات داخل سفارش</label>
+                    <div class="col-5 m-2 float-start d-inline">
+                        @foreach (var varible in item.NameAndCountProduct.ToList())
+                        {
+                            <div style="margin-bottom: 3px;">
+                                <span class=" btn btn-primary btn-sm m-5 d-inline">@varible.Key</span>
+                                <span class="btn btn-warning btn-sm m-5 position-absolute d-inline" style="float:left">@varible.Value عدد</span>
+                            </div>
+                        }
+                    </div>
+
+                </div>
+                <div class="col-md-6 col-lg-5">
+                    <button type="button" onclick="NextStatus(@item.StatusPriority,@item.OrderId)" style="background: #7F00FF; font-size: 13px !important;" class="btn btn-success text-white mr-1 p-2 pl-3 pr-3 font-weight-bold">
+                        تبدیل وضعیت
+                    </button>
+                    <div style="margin-top:15px">
+                        <p>آدرس : @item.Address</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div> *@
+
+@section script {
+    <script>
+
+        function ChangeOrderStatus(OrderStatusDto, orderId) {
+            if (OrderStatusDto.orderStatusTitle === "ارسال شده") {
+                $("#OrderStatusModal").modal("show");
+                $("#OrderIdInput").val(orderId)
+                $("#PriotityInput").val(OrderStatusDto.orderStatusPriority);
+            }
+
+            else {
+                swal.fire({
+                    title: "تبدیل وضعیت",
+                    text: "تبدیل به : " + OrderStatusDto.orderStatusTitle,
+                    showCancelButton: true,
+                    cancelButtonText: "خیر",
+                    confirmButtonText: "بله",
+                }).then(function (result) {
+                    if (result.isConfirmed) {
+                        ChengeStatusPart2(OrderStatusDto, orderId)
+                    }
+                    else {
+                        return;
+                    }
+                });
+            }
+
+        }
+
+        function NextStatus(priority, orderId) {
+            if (priority >= 5) {
+                swal.fire({
+                    title: "تبدیل وضعبت",
+                    text: "وضعیت فعلی آخرین وضعیت است",
+                    confirmButtonText: "باشه",
+                });
+                return;
+            }
+            $.ajax({
+                url: "/admin/orders/GetNextStatus",
+                type: "POST",
+                data: { priority: priority },
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                success: function (data) {
+                    ChangeOrderStatus(data, orderId);
+                }
+
+            });
+        }
+
+        function ChengeStatus(OrderStatusDto, orderId) {
+            $.ajax({
+                url: "/admin/Orders/ChangeOrderStatus",
+                type: "POST",
+                data: { priority: OrderStatusDto.orderStatusPriority, sendCode: $("#SendCodeValidate").val(), OrderId: orderId },
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                error: ErrorAlert(),
+            });
+        }
+
+        function ChengeStatusPart2(OrderStatusDto, orderId) {
+
+            $.ajax({
+                url: "/admin/Orders/ChangeOrderStatus",
+                type: "POST",
+                data: { priority: OrderStatusDto.orderStatusPriority, OrderId: orderId },
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                success: function () {
+                    window.location.reload();
+                }
+            });
+        }
+        function ChengeStatusWithSendCode() {
+            console.log($("#SendCodeInput").val().length);
+            var len = $("#SendCodeInput").val().length;
+            if (len > 24 || len < 24) {
+                $("#SendCodeValidate").html("باید 24 کاراکتر باشد");
+                return;
+            }
+
+            var sendcode = $("#SendCodeInput").val().toString();
+            $.ajax({
+                url: "/admin/Orders/ChangeOrderStatus",
+                type: "POST",
+                data: { priority: $("#PriotityInput").val(), sendCode: sendcode, OrderId: $("#OrderIdInput").val() },
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                success: function (result) {
+                    if (result.statusCode === 0) {
+                        window.location.reload();
+                        return;
+                    }
+                    else {
+                        $("#OrderStatusModal").modal("hide");
+                        ErrorAlert(result.title, result.statusMessage, false, "");
+                    }
+                }
+
+            });
+
+        }
+
+    </script>
+}
+

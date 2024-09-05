@@ -1,0 +1,160 @@
+﻿@page "{Handler?}"
+@using HYR_Blog.CoreLayer.Utilities.Other.Directories
+@model HYR_Blog.Pages.CartDetailModel
+@{
+    
+}
+
+
+@Html.AntiForgeryToken()
+<section class="cart-home">
+    <div class="post-item-cart d-block order-2">
+        <div class="content-page">
+            <div class="cart-form" id="CartItemDetailContainer">
+               
+            </div>
+            <div class="cart-collaterals" id="CartTranportationContainer">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section script{
+    <script>
+
+        $(document).ready(function () {
+            LoadCartItemDetil();
+            LoadCartTranportationContainer();
+        });
+
+
+        let constTransportation = 1 ;
+        function LoadCartItemDetil() {
+            $.ajax({
+                url: "/CartDetail/GetCartItems",
+                type:"POST",
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                success: function (resultHtml) {
+                    $("#CartItemDetailContainer").html("");
+                    $("#CartItemDetailContainer").html(resultHtml);
+                }
+            });
+        }
+        function AddCartItemInCart(productId) {
+            $.ajax({
+                url: "/CartDetail/AddCartItemInCart",
+                type: "POST",
+                data: { ProductId : productId },
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+
+                success: function (JsonResult) {
+                    if (JsonResult === 0) {
+                        LoadCartItemDetil();
+                        LoadCartTranportationContainer();
+                    }
+                    if (JsonResult === 2) {
+                        $("#CartItemDetailContainer").html("");
+                        $("#CartItemDetailContainer").html("<div class='alert alert-danger'>مشکلی در سمت سرور پیش آمده است</div>");
+                    }
+                    if (JsonResult === 1) {
+                        $("#InventoryValidate").html("");
+                        $("#InventoryValidate").html("تعداد بیشتر از موجودی است");
+                    }
+                }
+
+            })
+        }
+        function RemoveOneCartItemFromCart(productId) {
+            $.ajax({
+                url: "/cartDetail/RemoveOneCartItemFromCart",
+                type: "POST",
+                data: { ProductId: productId },
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                success: function (JsonResult) {
+
+                    if (JsonResult === 0) {
+                        LoadCartItemDetil();
+                        LoadCartTranportationContainer();
+                    }
+                    if (JsonResult === 2) {
+                        $("#CartItemDetailContainer").html("");
+                        $("#CartItemDetailContainer").html("<div class='alert alert-danger'>مشکلی در سمت سرور پیش آمده است</div>");
+                    }
+                    if (JsonResult === 1) {
+                        $("#InventoryValidate").html("");
+                        $("#InventoryValidate").html("تعداد کمتر از حداقل سفارش است");
+                    }
+
+                }
+            })
+        }
+        function LoadCartTranportationContainer() {
+            $.ajax({
+                url: "/CartDetail/GetCartTranportation",
+                type: "POST",
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                success: function (resultHtml) {
+                    $("#CartTranportationContainer").html("");
+                    $("#CartTranportationContainer").html(resultHtml);
+                }
+            });
+        }
+        function ChangeTransportation(Transpotation) {
+            constTransportation = Transpotation ;
+            UpdateTotalPriseWith(Transpotation);
+        }
+        function ApplyDiscountCode() {
+            UpdateTotalPriseWith(constTransportation);
+        }
+        function UpdateTotalPriseWith(TransportationId) {
+            var DiscountText = $("#DiscountText").val();
+            $.ajax({
+                url: "/CartDetail/UpdateTotalPriseWith",
+                type: "POST",
+                data: { TransportationId: TransportationId, DiscountText: DiscountText },
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                success: function (JsonResult) {
+                    if (JsonResult.statusCode === 0) {
+                        $("#TotalContainer").html("");
+                        $("#TotalContainer").html(JsonResult.data + " تومان ");
+                    }
+                    else if (JsonResult.statusCode === 3) {
+                        $("#DiscountValidation").html("");
+                        $("#DiscountValidation").html("<div class='alert alert-danger p-1 mt-3'>کد تخفیف نا معتبر است</div>");
+                    }
+                    else {
+                        $("#DiscountValidation").html("");
+                        $("#DiscountValidation").html("<div class='alert alert-danger p-1 mt-3'>" + JsonResult.statusMessage + "</div>");
+                    }
+                }
+            })
+        }
+        function RemoveAllItem(CartItemId) {
+            console.log("Rfge");
+            $.ajax({
+                url: "/cartdetail/RemoveItems",
+                type: "POST",
+                data: { CartItemId : CartItemId},
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                success: function () {
+                    LoadCartItemDetil();
+                    LoadCartTranportationContainer();
+                }
+            });
+        }
+    </script>
+}

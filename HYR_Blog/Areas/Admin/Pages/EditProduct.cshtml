@@ -1,0 +1,350 @@
+﻿@page "{handler?}"
+@using HYR_Blog.CoreLayer.Utilities.Other.Directories
+@using HYR_Blog.CoreLayer.Dtos.ImageProductDto
+@model HYR_Blog.Areas.Admin.Pages.EditProductModel
+@{
+}
+<div class="modal" id="AddImageModal" tabindex="-1" role="dialog" aria-labelledby="EditCategoryModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <form id="ImageForm">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLongTitle">افزودن تصویر</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div style="padding:2%;">
+                            <label>انتخاب تصویر : </label>
+                            <input type="file" id="AddImageInput" class="form-control" name="files" accept=".png , .jpg" multiple />
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
+                <button type="button" onclick="AddImage()" class="btn btn-primary">ذخیره </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="container">
+    <div class="box-header with-border">
+        <h3 class="box-title">ویرایش محصول :  @Model.ProductName</h3>
+    </div>
+    <!-- /.box-header -->
+    <!-- form start -->
+    <form role="form" method="post" enctype="multipart/form-data">
+        <div class="box-body">
+            <div class="form-group col-md-4">
+                <label asp-for="ProductName"></label>
+                <input asp-for="ProductName" type="text" class="form-control" id="exampleInputEmail1" placeholder="نام محصول">
+                <span asp-validation-for="ProductName" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+            </div>
+            <div class="form-group col-md-4">
+                <label asp-for="Inventory"></label>
+                <input asp-for="Inventory" type="number" class="form-control" id="exampleInputPassword1" placeholder="موجودی">
+                <span asp-validation-for="Inventory" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+            </div>
+            <div class="form-group col-md-4">
+                <label asp-for="Prise"></label>
+                <input asp-for="Prise" type="text" class="form-control" id="exampleInputPassword1" placeholder="قیمت">
+                <span asp-validation-for="Prise" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+            </div>
+            <div class="form-group col-md-4">
+                <label asp-for="PriseByDiscount"></label>
+                <input asp-for="PriseByDiscount" type="text" class="form-control" id="exampleInputPassword1" placeholder="قیمت با تخفیف">
+                <span asp-validation-for="PriseByDiscount" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+            </div>
+            <div class="form-group col-md-4">
+                <label asp-for="Weight"></label>
+                <input asp-for="Weight" type="text" class="form-control" id="exampleInputPassword1" placeholder="وزن همراه بسته بندی">
+                <span asp-validation-for="Weight" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+            </div>
+            <div class="form-group col-md-4">
+                <label asp-for="RelationKey"></label>
+                <input asp-for="RelationKey" type="text" class="form-control" id="exampleInputPassword1" placeholder="نام محصولات مرتبط">
+                <span asp-validation-for="RelationKey" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+            </div>
+
+            <div class="form-group col-md-12 checkbox">
+                <label style="display:inline-block;padding-left:25px" asp-for="IsSpecial">
+                </label>
+                <input asp-for="IsSpecial" type="checkbox">
+                <span asp-validation-for="IsSpecial" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+            </div>
+            <div class="form-group col-12">
+                <label asp-for="Files" class="form-label"></label>
+
+
+                <div class="row" id="ImagesDiv">
+                </div>
+
+
+                <div style="padding:5px">
+                    @*  <button onclick="addImage()" type="button" class="btn btn-success" data-toggle="modal" data-target="#AddImageModal">افزودن تصویر جدید</button> *@
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#AddImageModal">افزودن تصویر</button>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="Description"></label>
+                <textarea asp-for="Description" style="height:100px" class="form-control" type="text"></textarea>
+                <span asp-validation-for="Description" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="MetaTitle"></label>
+                <textarea asp-for="MetaTitle" style="height:100px" class="form-control" type="text"></textarea>
+                <span asp-validation-for="MetaTitle" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="MetaDescription"></label>
+                <textarea asp-for="MetaDescription" style="height:100px" class="form-control" type="text"></textarea>
+                <span asp-validation-for="MetaDescription" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="MetaTag"></label>
+                <textarea asp-for="MetaTag" style="height:100px" class="form-control" type="text"></textarea>
+                <span asp-validation-for="MetaTag" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="KeyWorld"></label>
+                <textarea asp-for="KeyWorld" style="height:100px" class="form-control" type="text"></textarea>
+                <span asp-validation-for="KeyWorld" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+            </div>
+            @Html.AntiForgeryToken()
+            <div class="form-group col-md-6 col-sm-9">
+                <label asp-for="CategoryId"></label>
+                <select asp-for="CategoryId" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                    <option>انتخاب کنید</option>
+                    @foreach (var VARIABLE in Model.categories)
+                    {
+                        <option value="@VARIABLE.CategoryId">@VARIABLE.CategoryName</option>
+                    }
+                </select>
+                <span asp-validation-for="CategoryId" style="color:red;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+
+            </div>
+            <div class="form-group col-md-5 col-sm-12" id="PropertyDiv">
+                <div id="PropertyList"></div>
+
+                <hr style="border-width:5px;" />
+
+                <div class="col-sm-12">
+                    <input id="Key" class="form-control col-sm-5 col-md-6" placeholder="نام ویژگی" />
+                    <input id="Value" class="form-control col-sm-5 col-md-6" placeholder="مقدار ویژگی" />
+                    <button id="AddProperty" type="button" onclick="CreateProperty(@TempData["productId"])" class="btn btn-success col-sm-2 col-md-4" style="margin:5px;">افزودن ویژگی</button>
+                </div>
+
+            </div>
+
+            <!-- /.box-body -->
+            <div class="form-group col-md-12">
+                <input class="form-control btn btn-primary" type="submit">
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Script
+{
+    <script>
+        $(document).ready(function () {
+             LoadProductImages();
+            LoadProperty();
+        });
+
+
+        function LoadProperty() {
+            $("#PropertyList").html("");
+            $.ajax({
+                url: "/admin/EditProduct/ShowProductProperty",
+                type: "get",
+                success: function (data) {
+
+                    data.forEach(function (obj) {
+                        $("#PropertyList").prepend('<div>' + obj.key + ' : ' + obj.value + '<button type="button" onclick="deleteProperty(' + obj.propertyId + ')" class="btn btn-success" style="display:inline-block;margin:5px">حذف</button></div>');
+                    });
+                },
+                failed: function () {
+                    ErrorAlert();
+                }
+            });
+        }
+
+        function CreateProperty(id) {
+            var key = $("#Key").val();
+            var Value = $("#Value").val();
+            var DataPost = {
+                "ProductId": id,
+                "Key": key,
+                "Value": Value
+            };
+            $.ajax({
+                url: "/admin/EditProduct/AddProperty",
+                type: "post",
+                data: DataPost,
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+                }
+            }).done(function (data) {
+                if (data.statusCode === 0) {
+                    LoadProperty();
+                }
+                if (data.statusCode === 1)
+                    ErrorAlert(data.title, data.statusMessage, false);
+                if (data.statusCode === 3)
+                    Duplicate(data.title, data.statusMessage, false);
+            });
+            $("#Key").val("");
+            $("#Value").val("");
+        }
+
+        function deleteProperty(propertyId) {
+            $.ajax({
+                url: "/admin/EditProduct/DeleteProductProperty",
+                type: "POST",
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                data: { propertyId: propertyId },
+                success: function (data) {
+
+                    if (data.statusCode === 0) {
+                        setTimeout(LoadProperty(), 2000);
+                    }
+                    if (data.statusCode === 1)
+                        ErrorAlert(data.title, data.statusMessage, false, "");
+                    if (data.statusCode === 2) {
+                        NotFound(data.title, data.statusMessage, false, "");
+                    }
+                }
+            });
+        }
+
+        function LoadProductImages() {
+            $.ajax({
+                url: "/admin/editProduct/ShowImages",
+                type: "get",
+                success: function (data) {
+                    $("#ImagesDiv").html("");
+                    data.forEach(function (obj) {
+                        $("#ImagesDiv").prepend('<div class="col-sm-4 col-lg-3 col-xs-6" style="max-width:200px;position:relative;display:flex;align-items:center"><a href="' + obj.imageName + '" ><img class="thumbnail img-responsive" src = "' + obj.imageName + '"/> </a> <a onclick="DeleteImage(' + obj.imageId + ')" class="btn btn-danger" style = "position:absolute;z-index:10"> حذف </a> </div>'); //$("#ImagesDiv").prepend(' <div class="col-sm-5 col-md-2" style="padding:5px"><div style="position: relative;display: flex;justify-content: center;align-items: end;"><img class="img-responsive" src="' + obj.imageName + '"/><button type="button" onclick="DeleteImage(' + obj.imageId + ')" class="btn btn-danger" style="margin:2px;float:inherit;position:absolute;top:77%;left:51%">حذف تصویر</button></div></div>');
+                    });
+
+                }
+            });
+
+        }
+
+        function DeleteImage(imageId) {
+            console.log(imageId);
+            $.ajax({
+                url: "/admin/editProduct/removeImage",
+                data: { imageId: imageId },
+                type: "POST",
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                success: function (data) {
+                    if (data.statusCode === 0) {
+                        LoadProductImages();
+                    }
+                    if (data.statusCode === 1)
+                        ErrorAlert(data.title, data.statusMessage, false, "");
+                    if (data.statusCode === 2) {
+                        NotFound(data.title, data.statusMessage, false, "");
+                    }
+
+                }
+            });
+        }
+
+        function openModal() {
+            $("#AddImageModal").show();
+        }
+
+
+
+
+
+        // function AddImage() {
+        //     var formData = new FormData();
+        //     // var file = $("#AddImageInput").files[0];
+        //     formData.append("files",AddImageInput.files[0]);
+        //     $.ajax({
+        //         url: "/admin/editProduct/AddImage",
+        //         data: formData,
+        //         type: "POST",
+        //         beforeSend: function (xhr) {
+        //             xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+        //         },
+        //         success: function (data) {
+        //             if (data.statusCode === 0) {
+        //                 LoadProductImages();
+        //             }
+        //             if (data.statusCode === 1)
+        //                 ErrorAlert(data.title, data.statusMessage, false, "");
+        //             if (data.statusCode === 2) {
+        //                 NotFound(data.title, data.statusMessage, false, "");
+        //             }
+        //             if (data.statusCode === 3) {
+        //                 Duplicate(data.title, data.statusMessage, false, "");
+        //             }
+
+        //         }
+        //     });
+        // }
+
+        function AddImage() {
+            var formData = new FormData($("#ImageForm")[0]);
+            console.log(formData);
+            $.ajax({
+                url: "/admin/EditProduct/AddImage",
+                type: "POST",
+                data: formData,    //important always Remember When You Want Simple Send Image With Ajax You should Use FormData
+                async: true,
+                contentType: false,
+                enctype: "multipart/from-data",
+                processData: false,
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                success: function (data) {
+                    if (data.statusCode === 0) {
+                        setTimeout(LoadProductImages(), 3000);
+                        $("#AddImageModal").modal("hide");
+                        $("#AddImageInput").val("");
+                    }
+                    if (data.statusCode === 1) {
+                        ErrorAlert(data.title, data.statusMessage, false, "");
+                        $("#AddImageModal").modal("hide");
+                    }
+
+                    if (data.statusCode === 2) {
+                        NotFound(data.title, data.statusMessage, false, "");
+                    }
+                    if (data.statusCode === 3) {
+                        Duplicate(data.title, data.statusMessage, false, "");
+                    }
+                }
+            });
+        }
+
+
+
+
+
+        
+
+
+
+    </script>
+}

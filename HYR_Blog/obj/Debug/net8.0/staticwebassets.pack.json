@@ -1,0 +1,945 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\Css\\CustomCss.css",
+      "PackagePath": "staticwebassets\\Admin\\Css\\CustomCss.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\Css\\forListProduct.css",
+      "PackagePath": "staticwebassets\\Admin\\Css\\forListProduct.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\Ionicons\\css\\ionicons.css",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\Ionicons\\css\\ionicons.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\Ionicons\\css\\ionicons.min.css",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\Ionicons\\css\\ionicons.min.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\bootstrap-datepicker\\dist\\css\\bootstrap-datepicker.css",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\bootstrap-datepicker\\dist\\css\\bootstrap-datepicker.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\bootstrap-datepicker\\dist\\css\\bootstrap-datepicker.min.css",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\bootstrap-datepicker\\dist\\css\\bootstrap-datepicker.min.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\bootstrap-datepicker\\dist\\css\\bootstrap-datepicker.standalone.css",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\bootstrap-datepicker\\dist\\css\\bootstrap-datepicker.standalone.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\bootstrap-datepicker\\dist\\css\\bootstrap-datepicker.standalone.min.css",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\bootstrap-datepicker\\dist\\css\\bootstrap-datepicker.standalone.min.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\bootstrap-datepicker\\dist\\css\\bootstrap-datepicker3.css",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\bootstrap-datepicker\\dist\\css\\bootstrap-datepicker3.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\bootstrap-datepicker\\dist\\css\\bootstrap-datepicker3.min.css",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\bootstrap-datepicker\\dist\\css\\bootstrap-datepicker3.min.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\bootstrap-datepicker\\dist\\css\\bootstrap-datepicker3.standalone.css",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\bootstrap-datepicker\\dist\\css\\bootstrap-datepicker3.standalone.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\bootstrap-datepicker\\dist\\css\\bootstrap-datepicker3.standalone.min.css",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\bootstrap-datepicker\\dist\\css\\bootstrap-datepicker3.standalone.min.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\bootstrap-daterangepicker\\.bower.json",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\bootstrap-daterangepicker\\.bower.json"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\bootstrap-daterangepicker\\bower.json",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\bootstrap-daterangepicker\\bower.json"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\bootstrap-daterangepicker\\daterangepicker.css",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\bootstrap-daterangepicker\\daterangepicker.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\bootstrap-daterangepicker\\demo.html",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\bootstrap-daterangepicker\\demo.html"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\bootstrap-daterangepicker\\drp.png",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\bootstrap-daterangepicker\\drp.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\bootstrap-daterangepicker\\example\\amd\\index.html",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\bootstrap-daterangepicker\\example\\amd\\index.html"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\bootstrap-daterangepicker\\example\\browserify\\index.html",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\bootstrap-daterangepicker\\example\\browserify\\index.html"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\bootstrap-daterangepicker\\package.json",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\bootstrap-daterangepicker\\package.json"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\bootstrap-daterangepicker\\website\\index.html",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\bootstrap-daterangepicker\\website\\index.html"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\bootstrap-daterangepicker\\website\\website.css",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\bootstrap-daterangepicker\\website\\website.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\bootstrap\\dist\\css\\bootstrap-theme.css",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\bootstrap\\dist\\css\\bootstrap-theme.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\bootstrap\\dist\\css\\bootstrap-theme.min.css",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\bootstrap\\dist\\css\\bootstrap-theme.min.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\bootstrap\\dist\\fonts\\glyphicons-halflings-regular.eot",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\bootstrap\\dist\\fonts\\glyphicons-halflings-regular.eot"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\bootstrap\\dist\\fonts\\glyphicons-halflings-regular.ttf",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\bootstrap\\dist\\fonts\\glyphicons-halflings-regular.ttf"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\bootstrap\\dist\\fonts\\glyphicons-halflings-regular.woff",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\bootstrap\\dist\\fonts\\glyphicons-halflings-regular.woff"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\font-awesome\\css\\font-awesome.css",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\font-awesome\\css\\font-awesome.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\font-awesome\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\font-awesome\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\font-awesome\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\font-awesome\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\font-awesome\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\font-awesome\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\font-awesome\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\font-awesome\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\font-awesome\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\font-awesome\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\jquery-sparkline\\.bower.json",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\jquery-sparkline\\.bower.json"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\jquery-sparkline\\Changelog.txt",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\jquery-sparkline\\Changelog.txt"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\jquery-sparkline\\bower.json",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\jquery-sparkline\\bower.json"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\jquery-sparkline\\minheader.txt",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\jquery-sparkline\\minheader.txt"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\jquery-sparkline\\sparkline.jquery.json",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\jquery-sparkline\\sparkline.jquery.json"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\jquery-sparkline\\version.txt",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\jquery-sparkline\\version.txt"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\jquery\\.bower.json",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\jquery\\.bower.json"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\jquery\\AUTHORS.txt",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\jquery\\AUTHORS.txt"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\jquery\\bower.json",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\jquery\\bower.json"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\jquery\\external\\sizzle\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\jquery\\external\\sizzle\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\jquery\\src\\.eslintrc.json",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\jquery\\src\\.eslintrc.json"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\jvectormap\\jquery-jvectormap.css",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\jvectormap\\jquery-jvectormap.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\bower_components\\morris.js\\morris.css",
+      "PackagePath": "staticwebassets\\Admin\\bower_components\\morris.js\\morris.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\dist\\css\\AdminLTE.css",
+      "PackagePath": "staticwebassets\\Admin\\dist\\css\\AdminLTE.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\dist\\css\\bootstrap-theme.css",
+      "PackagePath": "staticwebassets\\Admin\\dist\\css\\bootstrap-theme.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\dist\\css\\customize-adminlte.css",
+      "PackagePath": "staticwebassets\\Admin\\dist\\css\\customize-adminlte.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\dist\\css\\persian-datepicker-0.4.5.min.css",
+      "PackagePath": "staticwebassets\\Admin\\dist\\css\\persian-datepicker-0.4.5.min.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\dist\\css\\rtl.css",
+      "PackagePath": "staticwebassets\\Admin\\dist\\css\\rtl.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\dist\\css\\skins\\_all-skins.min.css",
+      "PackagePath": "staticwebassets\\Admin\\dist\\css\\skins\\_all-skins.min.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\dist\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\Admin\\dist\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\dist\\fonts\\Vazir-Bold-FD-WOL.ttf",
+      "PackagePath": "staticwebassets\\Admin\\dist\\fonts\\Vazir-Bold-FD-WOL.ttf"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\dist\\fonts\\Vazir-FD-WOL.ttf",
+      "PackagePath": "staticwebassets\\Admin\\dist\\fonts\\Vazir-FD-WOL.ttf"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\dist\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\Admin\\dist\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\dist\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\Admin\\dist\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\dist\\fonts\\iranyekan\\eot\\iranyekanwebbold(fanum).eot",
+      "PackagePath": "staticwebassets\\Admin\\dist\\fonts\\iranyekan\\eot\\iranyekanwebbold(fanum).eot"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\dist\\fonts\\iranyekan\\eot\\iranyekanweblight(fanum).eot",
+      "PackagePath": "staticwebassets\\Admin\\dist\\fonts\\iranyekan\\eot\\iranyekanweblight(fanum).eot"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\dist\\fonts\\iranyekan\\eot\\iranyekanwebregular(fanum).eot",
+      "PackagePath": "staticwebassets\\Admin\\dist\\fonts\\iranyekan\\eot\\iranyekanwebregular(fanum).eot"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\dist\\fonts\\iranyekan\\ttf\\iranyekanwebbold(fanum).ttf",
+      "PackagePath": "staticwebassets\\Admin\\dist\\fonts\\iranyekan\\ttf\\iranyekanwebbold(fanum).ttf"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\dist\\fonts\\iranyekan\\ttf\\iranyekanweblight(fanum).ttf",
+      "PackagePath": "staticwebassets\\Admin\\dist\\fonts\\iranyekan\\ttf\\iranyekanweblight(fanum).ttf"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\dist\\fonts\\iranyekan\\ttf\\iranyekanwebregular(fanum).ttf",
+      "PackagePath": "staticwebassets\\Admin\\dist\\fonts\\iranyekan\\ttf\\iranyekanwebregular(fanum).ttf"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\dist\\fonts\\iranyekan\\woff2\\iranyekanwebbold(fanum).woff2",
+      "PackagePath": "staticwebassets\\Admin\\dist\\fonts\\iranyekan\\woff2\\iranyekanwebbold(fanum).woff2"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\dist\\fonts\\iranyekan\\woff2\\iranyekanweblight(fanum).woff2",
+      "PackagePath": "staticwebassets\\Admin\\dist\\fonts\\iranyekan\\woff2\\iranyekanweblight(fanum).woff2"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\dist\\fonts\\iranyekan\\woff2\\iranyekanwebregular(fanum).woff2",
+      "PackagePath": "staticwebassets\\Admin\\dist\\fonts\\iranyekan\\woff2\\iranyekanwebregular(fanum).woff2"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\dist\\fonts\\iranyekan\\woff\\iranyekanwebbold(fanum).woff",
+      "PackagePath": "staticwebassets\\Admin\\dist\\fonts\\iranyekan\\woff\\iranyekanwebbold(fanum).woff"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\dist\\fonts\\iranyekan\\woff\\iranyekanweblight(fanum).woff",
+      "PackagePath": "staticwebassets\\Admin\\dist\\fonts\\iranyekan\\woff\\iranyekanweblight(fanum).woff"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\dist\\img\\user2-160x160.jpg",
+      "PackagePath": "staticwebassets\\Admin\\dist\\img\\user2-160x160.jpg"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\dist\\js\\adminlte.min.js",
+      "PackagePath": "staticwebassets\\Admin\\dist\\js\\adminlte.min.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\dist\\js\\demo.js",
+      "PackagePath": "staticwebassets\\Admin\\dist\\js\\demo.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\dist\\js\\pages\\dashboard.js",
+      "PackagePath": "staticwebassets\\Admin\\dist\\js\\pages\\dashboard.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\plugins\\bootstrap-wysihtml5\\bootstrap3-wysihtml5.all.js",
+      "PackagePath": "staticwebassets\\Admin\\plugins\\bootstrap-wysihtml5\\bootstrap3-wysihtml5.all.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\plugins\\bootstrap-wysihtml5\\bootstrap3-wysihtml5.all.min.js",
+      "PackagePath": "staticwebassets\\Admin\\plugins\\bootstrap-wysihtml5\\bootstrap3-wysihtml5.all.min.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\plugins\\bootstrap-wysihtml5\\bootstrap3-wysihtml5.css",
+      "PackagePath": "staticwebassets\\Admin\\plugins\\bootstrap-wysihtml5\\bootstrap3-wysihtml5.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\plugins\\bootstrap-wysihtml5\\bootstrap3-wysihtml5.min.css",
+      "PackagePath": "staticwebassets\\Admin\\plugins\\bootstrap-wysihtml5\\bootstrap3-wysihtml5.min.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\plugins\\jvectormap\\jquery-jvectormap-1.2.2.min.js",
+      "PackagePath": "staticwebassets\\Admin\\plugins\\jvectormap\\jquery-jvectormap-1.2.2.min.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\Admin\\plugins\\jvectormap\\jquery-jvectormap-world-mill-en.js",
+      "PackagePath": "staticwebassets\\Admin\\plugins\\jvectormap\\jquery-jvectormap-world-mill-en.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\css\\main.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\main.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\css\\responsive.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\responsive.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\css\\vendor\\bootstrap-slider.min.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\vendor\\bootstrap-slider.min.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\css\\vendor\\bootstrap.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\vendor\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\css\\vendor\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\vendor\\font-awesome.min.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\css\\vendor\\lightgallery.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\vendor\\lightgallery.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\css\\vendor\\materialdesignicons.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\vendor\\materialdesignicons.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\css\\vendor\\nice-select.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\vendor\\nice-select.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\css\\vendor\\noUISlider.min.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\vendor\\noUISlider.min.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\css\\vendor\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\vendor\\owl.carousel.min.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\eot\\IRANSansWeb.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\eot\\IRANSansWeb.eot"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\eot\\IRANSansWeb_Black.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\eot\\IRANSansWeb_Black.eot"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\eot\\IRANSansWeb_Bold.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\eot\\IRANSansWeb_Bold.eot"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\eot\\IRANSansWeb_Light.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\eot\\IRANSansWeb_Light.eot"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\eot\\IRANSansWeb_Medium.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\eot\\IRANSansWeb_Medium.eot"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\eot\\IRANSansWeb_UltraLight.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\eot\\IRANSansWeb_UltraLight.eot"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\ttf\\IRANSansWeb.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\ttf\\IRANSansWeb.ttf"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\ttf\\IRANSansWeb_Black.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\ttf\\IRANSansWeb_Black.ttf"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\ttf\\IRANSansWeb_Bold.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\ttf\\IRANSansWeb_Bold.ttf"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\ttf\\IRANSansWeb_Light.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\ttf\\IRANSansWeb_Light.ttf"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\ttf\\IRANSansWeb_Medium.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\ttf\\IRANSansWeb_Medium.ttf"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\ttf\\IRANSansWeb_UltraLight.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\ttf\\IRANSansWeb_UltraLight.ttf"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\woff2\\IRANSansWeb.woff2",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\woff2\\IRANSansWeb.woff2"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\woff2\\IRANSansWeb_Black.woff2",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\woff2\\IRANSansWeb_Black.woff2"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\woff2\\IRANSansWeb_Bold.woff2",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\woff2\\IRANSansWeb_Bold.woff2"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\woff2\\IRANSansWeb_Light.woff2",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\woff2\\IRANSansWeb_Light.woff2"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\woff2\\IRANSansWeb_Medium.woff2",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\woff2\\IRANSansWeb_Medium.woff2"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\woff2\\IRANSansWeb_UltraLight.woff2",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\woff2\\IRANSansWeb_UltraLight.woff2"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\woff\\IRANSansWeb.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\woff\\IRANSansWeb.woff"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\woff\\IRANSansWeb_Black.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\woff\\IRANSansWeb_Black.woff"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\woff\\IRANSansWeb_Bold.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\woff\\IRANSansWeb_Bold.woff"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\woff\\IRANSansWeb_Light.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\woff\\IRANSansWeb_Light.woff"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\woff\\IRANSansWeb_Medium.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\woff\\IRANSansWeb_Medium.woff"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\woff\\IRANSansWeb_UltraLight.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\woff\\IRANSansWeb_UltraLight.woff"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\lightgallery\\lg.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\lightgallery\\lg.eot"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\lightgallery\\lg.svg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\lightgallery\\lg.svg"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\lightgallery\\lg.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\lightgallery\\lg.ttf"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\lightgallery\\lg.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\lightgallery\\lg.woff"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\materialdesignicons-webfont.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\materialdesignicons-webfont.eot"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\materialdesignicons-webfont.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\materialdesignicons-webfont.ttf"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\materialdesignicons-webfont.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\materialdesignicons-webfont.woff"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\fonts\\materialdesignicons-webfont.woff2",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\materialdesignicons-webfont.woff2"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\images\\404.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\404.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\images\\adplacement\\a-1.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\adplacement\\a-1.jpg"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\images\\adplacement\\a-2.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\adplacement\\a-2.jpg"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\images\\adplacement\\a-3.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\adplacement\\a-3.jpg"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\images\\adplacement\\a-8.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\adplacement\\a-8.jpg"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\images\\brand\\shahab.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\brand\\shahab.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\images\\footer\\license\\L-1.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\footer\\license\\L-1.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\images\\footer\\license\\L-2.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\footer\\license\\L-2.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\images\\loading.gif",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\loading.gif"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\images\\logo.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\logo.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\images\\man.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\man.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\images\\menu-main\\category\\child.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\menu-main\\category\\child.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\images\\menu-main\\category\\cup.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\menu-main\\category\\cup.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\images\\menu-main\\category\\edit.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\menu-main\\category\\edit.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\images\\menu-main\\category\\home.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\menu-main\\category\\home.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\images\\menu-main\\category\\makeup.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\menu-main\\category\\makeup.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\images\\menu-main\\category\\print.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\menu-main\\category\\print.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\images\\menu-main\\category\\smartphone.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\menu-main\\category\\smartphone.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\images\\menu-main\\category\\suit.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\menu-main\\category\\suit.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\images\\shopping-cart.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\shopping-cart.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\images\\slider-main\\sm-1.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-main\\sm-1.jpg"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\images\\slider-main\\sm-2.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-main\\sm-2.jpg"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\js\\main.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\main.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\js\\vendor\\ResizeSensor.min.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\vendor\\ResizeSensor.min.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\js\\vendor\\bootstrap-slider.min.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\vendor\\bootstrap-slider.min.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\js\\vendor\\bootstrap.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\vendor\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\js\\vendor\\countdown.min.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\vendor\\countdown.min.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\js\\vendor\\jquery-3.2.1.min.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\vendor\\jquery-3.2.1.min.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\js\\vendor\\jquery.countdown.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\vendor\\jquery.countdown.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\js\\vendor\\jquery.ez-plus.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\vendor\\jquery.ez-plus.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\js\\vendor\\jquery.nice-select.min.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\vendor\\jquery.nice-select.min.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\js\\vendor\\lightgallery-all.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\vendor\\lightgallery-all.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\js\\vendor\\nouislider.min.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\vendor\\nouislider.min.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\js\\vendor\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\vendor\\owl.carousel.min.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\js\\vendor\\theia-sticky-sidebar.min.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\vendor\\theia-sticky-sidebar.min.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\SiteTemplate\\assets\\js\\vendor\\wNumb.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\vendor\\wNumb.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\bootstrap-5.0.2-dist\\bootstrap-5.0.2-dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\images\\StaticImages\\Honda.png",
+      "PackagePath": "staticwebassets\\images\\StaticImages\\Honda.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\images\\StaticImages\\IranYasa.png",
+      "PackagePath": "staticwebassets\\images\\StaticImages\\IranYasa.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\images\\StaticImages\\Logo.png",
+      "PackagePath": "staticwebassets\\images\\StaticImages\\Logo.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\images\\StaticImages\\Rapido.png",
+      "PackagePath": "staticwebassets\\images\\StaticImages\\Rapido.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\images\\StaticImages\\Technice.png",
+      "PackagePath": "staticwebassets\\images\\StaticImages\\Technice.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\images\\StaticImages\\cookma.png",
+      "PackagePath": "staticwebassets\\images\\StaticImages\\cookma.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\images\\StaticImages\\energi.png",
+      "PackagePath": "staticwebassets\\images\\StaticImages\\energi.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\images\\posts\\1f1f64b6-0847-4b47-9f50-0a0ec2ac48fdموتور-سیکلت-کوکما-a7tc.jpg",
+      "PackagePath": "staticwebassets\\images\\posts\\1f1f64b6-0847-4b47-9f50-0a0ec2ac48fdموتور-سیکلت-کوکما-a7tc.jpg"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\images\\posts\\30f43c1a-2a39-441f-bbbc-819b75de24ffلوگو-روغن-راپیدو.png",
+      "PackagePath": "staticwebassets\\images\\posts\\30f43c1a-2a39-441f-bbbc-819b75de24ffلوگو-روغن-راپیدو.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\images\\posts\\63f00b30-f181-4dbf-8ecc-90e66739d1d3Example.png",
+      "PackagePath": "staticwebassets\\images\\posts\\63f00b30-f181-4dbf-8ecc-90e66739d1d3Example.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\images\\posts\\a96ed4a3-c8a3-495c-a180-d30a3f23f61d8311dc.jpg",
+      "PackagePath": "staticwebassets\\images\\posts\\a96ed4a3-c8a3-495c-a180-d30a3f23f61d8311dc.jpg"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\images\\posts\\b97a6224-97d1-4b30-bf8a-8fa7ea04dc2f9777f0f8205db813f202402e617b21ccd69ed912_1609583690.jpg",
+      "PackagePath": "staticwebassets\\images\\posts\\b97a6224-97d1-4b30-bf8a-8fa7ea04dc2f9777f0f8205db813f202402e617b21ccd69ed912_1609583690.jpg"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\images\\posts\\ca6a11dc-8e43-494f-b880-e58d398b2880Background.png",
+      "PackagePath": "staticwebassets\\images\\posts\\ca6a11dc-8e43-494f-b880-e58d398b2880Background.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\images\\posts\\cda5067a-26b6-406e-bc1f-500131f85fc332fa7b750a8b86cb8c69a9492927e1ff0c87b8a8_1649518379.jpg",
+      "PackagePath": "staticwebassets\\images\\posts\\cda5067a-26b6-406e-bc1f-500131f85fc332fa7b750a8b86cb8c69a9492927e1ff0c87b8a8_1649518379.jpg"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\images\\posts\\d1ece0e0-8545-43a3-b68d-4dd8bbee5fa0logo1.png",
+      "PackagePath": "staticwebassets\\images\\posts\\d1ece0e0-8545-43a3-b68d-4dd8bbee5fa0logo1.png"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\images\\posts\\d2e14343-80d0-4e2b-91b1-098dc100a8dcDSC_5834.jpg",
+      "PackagePath": "staticwebassets\\images\\posts\\d2e14343-80d0-4e2b-91b1-098dc100a8dcDSC_5834.jpg"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\js\\Custom.js",
+      "PackagePath": "staticwebassets\\js\\Custom.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\js\\JqueryValidation\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\js\\JqueryValidation\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\js\\JqueryValidation\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\js\\JqueryValidation\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\js\\SweetAlert\\SweetAlert.js",
+      "PackagePath": "staticwebassets\\js\\SweetAlert\\SweetAlert.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\js\\global.js",
+      "PackagePath": "staticwebassets\\js\\global.js"
+    },
+    {
+      "Id": "D:\\MySource\\Projects\\HYR_Blog\\HYR_Blog\\wwwroot\\js\\jquery-3.6.0.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery-3.6.0.min.js"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.HYR_Blog.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.HYR_Blog.props",
+      "PackagePath": "build\\HYR_Blog.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.HYR_Blog.props",
+      "PackagePath": "buildMultiTargeting\\HYR_Blog.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.HYR_Blog.props",
+      "PackagePath": "buildTransitive\\HYR_Blog.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

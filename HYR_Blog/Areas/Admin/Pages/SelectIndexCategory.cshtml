@@ -1,0 +1,29 @@
+﻿@page
+@model HYR_Blog.Areas.Admin.Pages.SelectIndexCategoryModel
+@{
+}
+<div class="container">
+    <div style="margin-top:20px">
+        <p>شما میتوانید دسته بندی های نمایش داده شده در صفحه اصلی سایت خود را انتخاب کنید 
+            در نظر داشته باشد هر چند دسته بندی را میتوانید انتخاب کنید اما بهتر است حداقل 1 دسته بندی و حد اکثر 5 دسته بندی انتخاب شود
+        </p>
+        <form method="post">
+            <div class="row">
+                <div col-12>
+                    <label class="form-label">انتخاب دسته بندی ها </label>
+                    <select name="categoriesId" multiple>
+                        @foreach (var item in Model.indexCategoryDtos)
+                        {
+                            <option value="@item.CategoryId">@item.CategoryName</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-12">
+                    <input class="btn btn success" type="submit" value="انتخاب" />
+                </div>
+            </div>
+        </form>
+    </div>
+    
+</div>
+

@@ -1,0 +1,145 @@
+﻿@page "{handler?}"
+@using HYR_Blog.CoreLayer.Dtos.CategoryDto
+@using System.Collections.Specialized
+@model HYR_Blog.Areas.Admin.Pages.GetAllCategoryModel
+
+<div class="modal" id="EditCategoryModal" tabindex="-1" role="dialog" aria-labelledby="EditCategoryModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h3 class="modal-title" id="exampleModalLongTitle">ویرایش دسته بندی</h3>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div style="width:46%;padding:2%">
+                        <label>نام دسته بندی : </label>
+                        <input id="CategoryName" class="form-control" />
+                    </div>
+                    <div style="padding:2%;">
+                        <label>کلمات کلیدی : </label>
+                        <textarea id="KeyWorld" class="form-control"></textarea>
+                    </div>
+                    <div style="padding:2%;">
+                        <label>متاتگ ها : </label>
+                        <textarea id="MetaTag" class="form-control"></textarea>
+                    </div>
+                    <div style="padding:2%;">
+                        <label>توضیحات مختصر : </label>
+                        <textarea id="MetaDescription" class="form-control"></textarea>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
+                <button type="button" onclick="EditCategory()" class="btn btn-primary">ذخیره تعغیرات</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@Html.AntiForgeryToken()
+
+
+
+<div class="container col-xl-10 col-12 mt-5" id="outer-card-container">
+    @foreach (CategoryDto cat in Model.categoriesModel)
+    {
+
+        <div id="boxProduct">
+            <div id="card-main-container" class="mb-3">
+                <div class="col-md-6 col-lg-7">
+                    <h5 id="@(cat.CategoryId.ToString()+"CategoryName")" class="font-weight-bold"><a href="#" class="text-secondary">@cat.CategoryName</a></h5>
+                    <div class="d-flex flex-row mb-1 mt-3 product-tag">
+                        <label>توضیحات مختصر</label>
+                        <textarea id="@(cat.CategoryId.ToString()+"MetaDescription")" class="bg-info p-1 pl-2 pr-2 mr-1 " style="width:100%; padding:5px;border-radius:10px">@cat.MetaDescription</textarea>
+                        <label>متا تگ ها</label>
+                        <textarea id="@(cat.CategoryId.ToString()+"MetaTag")" class="bg-primary p-1 pl-2 pr-2" style="width:100%; padding:5px;border-radius:10px">@cat.MetaTag</textarea>
+                        <label>کلمات کلیدی</label>
+                        <textarea id="@(cat.CategoryId.ToString()+"KeyWorld")" class="bg-primary p-1 pl-2 pr-2" style="width:100%; padding:5px;border-radius:10px">@cat.KeyWorld</textarea>
+                    </div>
+
+                    <div>
+                        <p class="mb-3">دسته بندی ویژه : <span class="fa @(cat.IsSpecial == true? "fa-check":"fa-close")"></span></p>
+
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-2">
+                    <h5 class="font-weight-bold"></h5>
+                    <button type="button" onclick="ModalConfig(@cat.CategoryId)" style="background: #7F00FF; font-size: 13px !important;" class="btn btn-success text-white mr-1 p-2 pl-3 pr-3 font-weight-bold">
+                        مشاهده و ویرایش
+                    </button>
+                    <button onclick="DeleteCategory(@cat.CategoryId)" style="background: red; font-size: 13px !important; border-radius:50px" class="btn btn-success text-white mr-1 p-2 pl-3 pr-3 font-weight-bold">
+                        حذف
+                    </button>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section Script
+{
+    <script>
+        function DeleteCategory(categoryId) {
+            var datapost = {
+                "CategoryId": categoryId
+            };
+            // var data = JSON.stringify(datapost);
+            DeleteCaseWithAjax("/Admin/GetAllCategory/DeleteCategory", "POST", datapost);
+
+        }
+        var Id;
+        function ModalConfig(id) {
+            var name = $("#" + id + "CategoryName").text();
+            var KeyWorld = $("#" + id + "KeyWorld").text();
+            var MetaTag = $("#" + id + "MetaTag").text();
+            var MetaDescription = $("#" +id+"MetaDescription").text();
+
+
+            Id = id;
+            $("#CategoryName").val(name);
+            $("#KeyWorld").val(KeyWorld);
+            $("#MetaTag").val(MetaTag);
+            $("#MetaDescription").val(MetaDescription);
+            $("#EditCategoryModal").modal("show");
+        };
+
+        function EditCategory() {
+            var dataPost = {
+                "CategoryId": Id,
+                "CategoryName": $("#CategoryName").val(),
+                "MetaTag": $("#MetaTag").val(),
+                "MetaDescription": $("#MetaDescription").val(),
+                "KeyWorld": $("#KeyWorld").val()
+            }
+            $.ajax({
+                url: "/Admin/GetAllCategory/EditCategory",
+                type: "Post",
+                data: dataPost,
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                success: function (data) {
+                    if (data.statusCode === 2) {
+                        $("#EditCategoryModal").modal('hide');
+                        NotFound();
+                        return;
+                    }
+
+                    $("#EditCategoryModal").modal('hide');
+                    location.reload();
+                },
+                fail: function () {
+                    $("#EditCategoryModal").modal('hide');
+                    failed("ناموفق", "عملیات ناموفق", false);
+                }
+            });
+        }
+    </script>
+}

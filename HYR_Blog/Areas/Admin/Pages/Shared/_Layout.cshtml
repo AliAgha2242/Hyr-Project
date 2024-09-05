@@ -1,0 +1,103 @@
+﻿
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>داشبرد ۲ | کنترل پنل مدیریت</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="~/Admin/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="~/Admin/dist/css/rtl.css">
+    <link rel="stylesheet" href="~/Admin/dist/css/persian-datepicker-0.4.5.min.css">
+    <link rel="stylesheet" href="~/Admin/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Admin/bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="~/Admin/dist/css/AdminLTE.css">
+    <link rel="stylesheet" href="~/Admin/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="~/Admin/bower_components/morris.js/morris.css">
+    <link rel="stylesheet" href="~/Admin/bower_components/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="~/Admin/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="~/Admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <link rel="stylesheet" href="/Admin/dist/css/customize-adminlte.css">
+    <link rel="stylesheet" href="~/Admin/Css/CustomCss.css" />
+    @RenderSection("style",false)
+    
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+        <header class="main-header">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-mini">پنل</span>
+
+                <span class="logo-lg"><b>کنترل پنل مدیریت</b></span>
+            </a>
+
+            <partial name="_TopNav"></partial>
+        </header>
+
+        <partial name="_Aside"></partial>
+
+        <div class="content-wrapper">
+            @RenderBody()
+        </div>
+
+
+        <footer class="main-footer text-left">
+            <strong>
+                Copyleft &copy; 2014-2017 <a href="https://adminlte.io">Almsaeed Studio</a> & <a href="http://hosseinizadeh.ir/adminlte">Alireza Hosseinizadeh</a>
+            </strong>
+        </footer>
+
+        <div class="control-sidebar-bg"></div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="/Admin/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/Admin/bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script>
+    $.widget.bridge('uibutton', $.ui.button);
+</script>
+@*  <script src="bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script> *@
+@* <script src="~/Admin/bower_components/jquery/dist/jquery.js"></script> *@
+    <script src="~/Admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/Admin/bower_components/raphael/raphael.min.js"></script>
+    <script src="~/Admin/bower_components/morris.js/morris.min.js"></script>
+    <script src="~/Admin/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+    <script src="~/Admin/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="~/Admin/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="~/Admin/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+    <script src="~/Admin/bower_components/moment/min/moment.min.js"></script>
+    <script src="~/Admin/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="~/Admin/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/Admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+    <script src="~/Admin/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="~/Admin/bower_components/fastclick/lib/fastclick.js"></script>
+    <script src="~/Admin/dist/js/adminlte.min.js"></script>
+    <script src="~/Admin/dist/js/pages/dashboard.js"></script>
+    <script src="~/Admin/dist/js/demo.js"></script>
+    <script src="~/js/JqueryValidation/jquery.validate.min.js"></script>
+    <script src="~/js/JqueryValidation/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/SweetAlert/SweetAlert.js"></script>
+    <script src="~/js/global.js"></script>
+    <script src="~/js/custom.js"></script>
+    @await RenderSectionAsync("Script", false)
+</body>
+
+</html>

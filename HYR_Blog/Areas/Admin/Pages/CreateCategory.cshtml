@@ -1,0 +1,43 @@
+﻿@page
+@model HYR_Blog.Areas.Admin.Pages.CreateCategoryModel
+@{
+}
+
+
+
+
+
+<div class="container">
+    <h3>ثبت دسته بندی جدید</h3>
+    <form method="post">
+        <div>
+            <label asp-for="CategoryName"></label>
+            <input asp-for="CategoryName" type="text" id="minput" class="myinput"  placeholder="نام دسته بندی">
+            <span style="color:red;:500px;    display: block;margin-bottom: 10px;" asp-validation-for="CategoryName"></span>
+        </div>
+        <div>
+            <label asp-for="KeyWorld"></label>
+            <input type="text" id="lname" class="myinput" asp-for="KeyWorld"placeholder="">
+            <span style="color:red;:500px;    display: block;margin-bottom: 10px;" asp-validation-for="KeyWorld"></span>
+        </div>
+        <div>
+            <label asp-for="MetaDescription"></label>
+            <textarea class="myinput" asp-for="MetaDescription" placeholder=""></textarea>
+            <span style="color:red;:500px;    display: block;margin-bottom: 10px;" asp-validation-for="MetaDescription"></span>
+        </div>
+        <div>
+            <label asp-for="MetaTag"></label>
+            <textarea type="text" class="myinput" asp-for="MetaTag" placeholder=""></textarea>
+            <span style="color:red;:500px;    display: block;margin-bottom: 10px;" asp-validation-for="MetaTag"></span>
+        </div>
+       
+     
+        <input class="inputsubmit" type="submit" value="Submit">
+    </form>
+</div>
+
+
+
+
+
+

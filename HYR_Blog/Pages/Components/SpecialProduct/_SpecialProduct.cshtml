@@ -1,0 +1,89 @@
+﻿@using HYR_Blog.CoreLayer.Dtos.ProductDto
+@using HYR_Blog.CoreLayer.Utilities.Other.Directories
+@model List<IndexProductDto>
+
+<div class="col-lg-3 col-md-3 col-xs-12 pl order-1 d-block">
+    <div class="slider-moments">
+        <div class="widget-suggestion widget card">
+            <header class="card-header promo-single-headline">
+                <h3 class="card-title">پیشنهاد لحظه‌ای</h3>
+            </header>
+            <div id="suggestion-slider" class="owl-carousel owl-theme owl-rtl owl-loaded owl-drag">
+                <div class="owl-stage-outer">
+                    <div class="owl-stage" style="transform: translate3d(1369px, 0px, 0px); transition: all 0.25s ease 0s; width: 2190px;">
+                        @for (int i = 0; i < Model.Count; i++)
+                        {
+                            if (i < 2)
+                            {
+                                <div class="owl-item cloned" style="width: 273.75px;">
+                                    <div class="item">
+                                        <a asp-page="product" asp-route-slug="@Model[i].Slug">
+                                            <img src="@FileManage.GetProductImageByName(Model[i].FirstImageName)" class="w-100" alt="">
+                                        </a>
+                                        <h3 class="product-title">
+                                            <a asp-page="product" asp-route-slug="@Model[i].Slug">@Model[i].ProductName </a>
+                                        </h3>
+                                        <div class="price">
+
+                                            @if (Model[i].PriceByDiscount == null)
+                                            {
+                                                <ins><span>@Model[i].Prise.ToString("n0")<span>تومان</span></span></ins>
+                                            }
+                                            else
+                                            {
+                                                <del><span>@Model[i].Prise.ToString("n0")<span>تومان</span></span></del>
+                                                <ins><span>@Model[i].PriceByDiscount.ToString("n0")<span>تومان</span></span></ins>
+                                            }
+
+                                            @*  <span class="amount">
+                                    ۲۳,۰۰۰
+                                    <span>تومان</span>
+                                    </span> *@
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            }else{
+                                <div class="owl-item" style="width: 273.75px;">
+                                    <div class="item">
+                                        <a asp-page="product" asp-route-slug="@Model[i].Slug">
+                                            <img src="@FileManage.GetProductImageByName(Model[i].FirstImageName)" class="w-100" alt="">
+                                        </a>
+                                        <h3 class="product-title">
+                                            <a asp-page="product" asp-route-slug="@Model[i].Slug">@Model[i].ProductName </a>
+                                        </h3>
+                                        <div class="price">
+
+                                            @if (Model[i].PriceByDiscount == null)
+                                            {
+                                                <ins><span>@Model[i].Prise<span>تومان</span></span></ins>
+                                            }
+                                            else
+                                            {
+                                                <del><span>@Model[i].Prise<span>تومان</span></span></del>
+                                                <ins><span>@Model[i].PriceByDiscount<span>تومان</span></span></ins>
+                                            }
+
+                                            @*  <span class="amount">
+                                    ۲۳,۰۰۰
+                                    <span>تومان</span>
+                                    </span> *@
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="progressBar">
+                <div class="slide-progress" style="width: 100%; transition: width 5000ms ease 0s;"></div>
+            </div>
+        </div>
+    </div>
+</div>

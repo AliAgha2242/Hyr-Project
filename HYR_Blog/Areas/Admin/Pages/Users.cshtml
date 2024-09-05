@@ -1,0 +1,142 @@
+﻿@page
+@model HYR_Blog.Areas.Admin.Pages.UsersModel
+@{
+    
+}
+
+<div class="container" style="margin-bottom:15px">
+    <div class="row">
+        <form method="get">
+            <div class="col-4 col-sm-4">
+                <select name="IsActive" class="form-select">
+                    <option value="@true">مرتب سازی بر اساس بیشترین خرید</option>
+                    <option value="@false">مرتب سازی بر اساس کمترین خرید</option>
+                </select>
+            </div>
+            <div class="col-4 col-sm-4">
+                <select name="UserRole" class="form-select">
+                    <option value="@null">مرتب سازی بر اساس نقش کاربر</option>
+                    <option value="1">فقط ادمین ها</option>
+                    <option value="2">فقط مشتری ها</option>
+                    <option value="3">فقط کاربران معمولی </option>
+                </select>
+            </div>
+            <div class="col-4 col-sm-4" style="margin-top:1.5%">
+                <input class="form-control" type="text" name="UserName" placeholder="نام کاربر" />
+            </div>
+            <div class="col-4 col-sm-4" style="margin-top:1.5%">
+                <input class="form-control btn btn-success" type="submit" value="فیلتر" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal" id="EditUser" tabindex="-1" role="dialog" aria-labelledby="EditCategoryModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                @Html.AntiForgeryToken()
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h3 class="modal-title" id="exampleModalLongTitle">ویرایش کاربر </h3>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div style="width:46%;padding:2%">
+                        <label>نام  کاربر : </label>
+                        <input id="UserName" class="form-control" />
+                    </div>
+                    <div style="padding:2%;">
+                        <label> کلمه عبور : </label>
+                        <input id="Password" class="form-control"/>
+                        <input id="UserId" type="hidden"/>
+                    </div>
+                    <div style="padding:2%;">
+                        <label> نقش کاربر : </label>
+                        <select id="UserRole" asp-items="@Model.UserRoles">
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
+                <button type="button" onclick="UpdateUser()" class="btn btn-primary">ذخیره تعغیرات</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section style {
+    <link href="~/Admin/Css/forListProduct.css" rel="stylesheet" />
+}
+
+<hr style="border-width:3px;border-color:red;max-width:90%;margin-bottom:18px" />
+<div class="container col-xl-10 col-12 mt-5" id="outer-card-container">
+    @foreach (var user in Model.UserDtos)
+    {
+
+        <div id="boxProduct">
+            <div id="card-main-container" class="mb-3">
+                <div class="col-md-6 col-lg-7">
+                    <h5 class="font-weight-bold"><a href="#" class="text-secondary">@user.UserName</a></h5>
+                    <div class="d-flex flex-row mb-1 mt-3 product-tag">
+                        <p class="bg-info p-1 pl-2 pr-2 mr-1 " style="display:inline-block;padding:5px;border-radius:100px;color:antiquewhite"> رمز کاربر  : @user.UserPassword</p>
+                        <p class="bg-primary p-1 pl-2 pr-2" style="display:inline-block;padding:5px;border-radius:100px">نقش کاربر: @user.UserRole</p>
+                    </div>
+                    <div>
+                        <p class="list-inline-item">  تعداد خرید : <span>@user.UserShopsCount</span></p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-2">
+                    <button type="button" onclick="openmodal('@user.UserName','@user.UserPassword',@user.UserRoleId,@user.UserId)" style="background: #7F00FF; font-size: 13px !important;" class="btn btn-success text-white mr-1 p-2 pl-3 pr-3 font-weight-bold">
+                        ویرایش
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
+@section Script {
+    <script>
+        function openmodal(userName,Password,UserRoleId,userId) {
+            $("#EditUser").modal("show");
+            $("#UserName").val(userName);
+            $("#Password").val(Password);
+            $("#UserRole").val(UserRoleId);
+            $("#UserId").val(userId);
+        }
+
+
+
+        function UpdateUser(){
+            var userId = $("#UserId").val();
+            console.log(userId);
+            var userDto = {
+                "UserName": $("#UserName").val(),
+                "UserRoleId": $("#UserRole").val(),
+                "Password": $("#Password").val()
+            };
+            $.ajax({
+                url:"/admin/Users",
+                type:"Post",
+                data: {UserId : userId,userDto : userDto},
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                success:function(){
+                    $("#EditUser").modal("hide");
+                    window.location.reload();
+                },
+                error: function () {
+                    ErrorAlert();
+                }
+            })
+        }
+       
+    </script>
+}

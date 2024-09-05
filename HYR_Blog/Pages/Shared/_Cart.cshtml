@@ -1,0 +1,82 @@
+﻿@using HYR_Blog.CoreLayer.Dtos.CartDto
+@using HYR_Blog.CoreLayer.Services.ProductServices.Queries
+@using HYR_Blog.CoreLayer.Utilities.Other.Directories
+@model CartDto
+@inject IGetProductService GetProduct
+
+<div href="#" class="cart-basket-box">
+    <span class="icon-cart">
+        <i class="mdi mdi-cart"></i>
+    </span>
+    <span class="title-cart">سبد خرید</span>
+
+    @if (Model != null)
+    {
+        <span class="count-cart">@Model.CartItems.Count</span>
+        <span class="price-cart">
+            @Model.TotalPrise.ToString("n0")
+            <span>تومان</span>
+        </span>
+    }
+    else
+    {
+        <span class="price-cart">سبد خرید خالی است</span>
+    }
+</div>
+
+<div class="widget-shopping-cart">
+    <div class="widget-shopping-cart-content">
+        @if (Model == null || Model.CartItems.Count < 1)
+        {
+            <div class="p-2">هیچ محصولی در سبد خرید شما وجود ندارد</div>
+        }
+        else
+        {
+            <ul class="product-list-widget">
+                
+                @foreach (var item in Model.CartItems.GroupBy(ci=>ci.ProductId))
+                {
+                    <li class="mini-cart-item">
+                        <div class="mini-cart-item-content">
+                            <a onclick="RemoveCartItem(@item.First().CartItemId)" class="mini-cart-item-close">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                            <a href="#" class="mini-cart-item-image d-block">
+                                <img src="@FileManage.GetProductImageByName(@GetProduct.GetCartProductBy(item.First().ProductId).data.FirstImageName)">
+                            </a>
+                            <span class="product-name-card">@GetProduct.GetCartProductBy(item.First().ProductId).data.ProductName</span>
+                            <div class="variation">
+                                <span class="variation-n">فروشنده : </span>
+                                <p class="mb-0">HYR </p>
+                            </div>
+                            <div class="quantity">
+                                <span class="quantity-Price-amount">
+                                    <span>تعداد : </span>
+                                    @item.First().Count
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                }
+
+            </ul>
+            <div class="mini-card-total">
+                <strong>قیمت کل : </strong>
+                <span class="price-total">
+                    @Model.TotalPrise.ToString("n0")
+                    <span>تومان</span>
+                </span>
+            </div>
+        }
+        <div class="mini-card-button">
+            <a asp-page="cartDetail" class="view-card">مشاهده سبد خرید</a>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a asp-page="OrderConfirmation" class="card-checkout">تسویه حساب</a>
+            }else
+            {
+                <a asp-page="/User/Login" class="card-checkout">تسویه حساب</a>
+            }
+        </div>
+    </div>
+</div>

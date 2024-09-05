@@ -1,0 +1,89 @@
+﻿@page
+@model HYR_Blog.Pages.User.UserOrdersModel
+@{
+}
+
+
+@* <div class="modal" id="OrderStatusModal" tabindex="-1" role="dialog" aria-labelledby="EditCategoryModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLongTitle">ویرایش دسته بندی</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+
+                    <div style="padding:2%;">
+                        <input type="hidden" id="OrderIdInput" />
+                        <input type="hidden" id="PriotityInput" />
+                        <label>کد مرسوله پستی را وارد کنید </label>
+                        <input id="SendCodeInput" style="background-color:khaki" type="number" class="form-control" />
+                        <span id="SendCodeValidate"></span>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
+                <button type="button" class="btn btn-primary" onclick="ChengeStatusWithSendCode()">ذخیره تعغیرات</button>
+            </div>
+        </div>
+    </div>
+</div> *@
+
+
+
+@if (Model.Orders.Count >= 0)
+{
+    <div class="alert alert-danger d-404 font-weight-bold">
+        سفارشی وجود ندارد
+    </div>
+}
+ else
+    {
+<hr />
+<div class="container col-12 mt-5" id="outer-card-container" style=" border:solid;padding:10px;border;display:flex">
+    
+   
+        @foreach (var pro in Model.Orders)
+        {
+            <div class="row w-100">
+                <div class="col-12 col-lg-3">
+                    <a class="btn btn-primary">پیگیری سفارش : </a>
+                    <div>ارزش سفارش : @pro.SumPrise.ToString("n0")</div>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <div class="mb-2"> محصولات داخل سفارش :</div>
+                    @foreach (var item in pro.NameAndCountProduct.ToList())
+                    {
+                        <div class="col-12 col-lg-6 d-lg-table-row">
+                            <span class="btn btn-success col-8">@item.Key</span>
+                            <span class=" btn btn-primary col-4">عدد @item.Value</span>
+                        </div>
+
+                    }
+
+                </div>
+                <div class="col-12 col-lg-3 float-end">
+                    <span>وضعیت سفارش : </span>
+                    <span class="btn btn-outline-success">@pro.Status</span>
+                    <div class="mt-4">
+                        <span>آدرس : </span>
+                        <span class="btn btn-outline-success">@pro.Address</span>
+
+                    </div>
+                </div>
+            </div>
+        }
+    
+    
+</div>
+}
+
+

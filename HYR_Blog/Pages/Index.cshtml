@@ -1,0 +1,105 @@
+﻿@page "{handler?}"
+@model HYR_Blog.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home Page";
+    Html.AntiForgeryToken();
+}
+
+
+<partial name="_TopSlider"></partial>
+
+@await Component.InvokeAsync("DiscountProduct")
+
+
+
+<div class="container-main">
+    <div class="d-block">
+
+        @if(Model.categoryDtos != null && Model.categoryDtos.Count >= 1)
+        {
+            @await Component.InvokeAsync("ProductCategoryFirst", Model.categoryDtos.FirstOrDefault().CategoryId)
+        }
+        
+
+        @foreach (var item in Model.categoryDtos.Skip(1))
+        {
+            @await Component.InvokeAsync("ProductPerCategory", item.CategoryId)
+        }
+
+        
+        <div class="col-lg-12 col-md-12 col-xs-12 pr order-1 d-block">
+            <div class="slider-widget-products">
+                <div class="widget widget-product card mb-0">
+                    <div class="product-carousel-brand owl-carousel owl-theme owl-rtl owl-loaded owl-drag">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2234px;">
+                                <div class="owl-item active" style="width: 190.75px; margin-left: 10px;">
+                                    <div class="item">
+                                        <a href="#" class="d-block hover-img-link">
+                                            <img src="~/SiteTemplate/assets/images/brand/shahab.png" class="img-fluid img-brand" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="owl-item active" style="width: 190.75px; margin-left: 10px;">
+                                    <div class="item">
+                                        <a href="#" class="d-block hover-img-link mt-0">
+                                            <img src="~/images/StaticImages/cookma.png" class="img-fluid img-brand" style="margin-top:50px" alt="Cookma">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="owl-item active" style="width: 190.75px; margin-left: 10px;">
+                                    <div class="item">
+                                        <a href="#" class="d-block hover-img-link mt-0">
+                                            <img src="~/images/StaticImages/energi.png" class="img-fluid img-brand" alt="Energi">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="owl-item active" style="width: 190.75px; margin-left: 10px;">
+                                    <div class="item">
+                                        <a href="#" class="d-block hover-img-link mt-0">
+                                            <img src="~/images/StaticImages/Honda.png" class="img-fluid img-brand" alt="Honda">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="owl-item active" style="width: 190.75px; margin-left: 10px;">
+                                    <div class="item">
+                                        <a href="#" class="d-block hover-img-link mt-0">
+                                            <img src="~/images/StaticImages/IranYasa.png" style="margin-top:30px" class="img-fluid img-brand" alt="iranyasa">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="owl-item active" style="width: 190.75px; margin-left: 10px;">
+                                    <div class="item">
+                                        <a href="#" class="d-block hover-img-link mt-0">
+                                            <img src="~/images/StaticImages/Rapido.png" class="img-fluid img-brand" alt="Rapido">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="owl-item active" style="width: 190.75px; margin-left: 10px;">
+                                    <div class="item">
+                                        <a href="#" class="d-block hover-img-link mt-0">
+                                            <img src="~/images/StaticImages/Technice.png" style="margin-top:50px" class="img-fluid img-brand" alt="Technice">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-nav">
+                            <button type="button" role="presentation" class="owl-prev disabled">
+                                <i class="fa fa-angle-right"></i>
+                            </button>
+                            <button type="button" role="presentation" class="owl-next">
+                                <i class="fa fa-angle-left"></i>
+                            </button>
+                        </div>
+                        <div class="owl-dots disabled"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+

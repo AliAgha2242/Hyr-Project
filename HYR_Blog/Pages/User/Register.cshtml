@@ -1,0 +1,45 @@
+﻿@page "{handler?}"
+@model HYR_Blog.Areas.User.Pages.RegisterModel
+@{
+   @Html.AntiForgeryToken();
+}
+
+<div class="container">
+    <form method="post">
+        <div style="margin-bottom:20%;">
+            <div class="row justify-content-center">
+                <div class="col-lg-6" style="margin-top:10%">
+                    <h4 class="form-title " style="color:green">ثبت نام در سایت </h4>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <label class="form-label" asp-for="UserName">نام کاربری : </label>
+                    <input class="form-control" asp-for="UserName" type="text" placeholder="نام کاربری خود را وارد کنید" data-val-remote-additionalfields="__RequestVerifictionToken" />
+                    <span style="color:red;" asp-validation-for="UserName"></span>
+                </div>
+            </div>
+            <div class="row justify-content-center" style="margin-top:5%;margin-bottom:5%">
+                <div class="col-lg-6">
+                    <label class="form-label" asp-for="Password">گذرواژه  : </label>
+                    <input class="form-control" asp-for="Password" type="text" placeholder="رمز عبور را وارد کنید" />
+                    <span style="color:red;" asp-validation-for="Password"></span>
+                </div>
+            </div>
+            <div class="row justify-content-center" style="margin-top:5%;margin-bottom:5%">
+                <div class="col-lg-6">
+                    <label class="form-label" asp-for="RepPassword">تکرار گذرواژه : </label>
+                    <input class="form-control" asp-for="RepPassword" type="text" placeholder="تکرار رمز عیور را وارد کنید" />
+                    <span style="color:red;" asp-validation-for="RepPassword"></span>
+                </div>
+            </div>
+            <div class="row justify-content-center" style="margin-top:2%;margin-bottom:2%">
+                <div class="col-lg-6">
+                    <input class="form-control btn btn-success" style="background-color:blueviolet;color:white" value="ثبت نام" type="submit" />
+                </div>
+            </div>
+        </div>
+    </form>
+    
+
+</div>

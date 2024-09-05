@@ -1,0 +1,59 @@
+﻿@page "{handler?}"
+@model HYR_Blog.Areas.Admin.Pages.CreateDiscountModel
+@{
+    Html.AntiForgeryToken();
+}
+<div class="container">
+    <form method="post">
+        <div class="row" style="margin-top:20px">
+            <div class="col-sm-6">
+                <div class="col-sm-9">
+                    <label class="form-label" asp-for="DisCountCodeText"></label>
+                    <input id="Code-Input" asp-for="DisCountCodeText" class="form-control" />
+                </div>
+                <div class="col-sm-2">
+                    <button onclick="GuidGenerate()" type="button" style="margin-top:25px" class="btn btn-primary">ساخت خودکار کد</button>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <label class="form-label" asp-for="UseCountAllowed"></label>
+                <input asp-for="UseCountAllowed" class="form-control" value="rtegrt" />
+            </div>
+            <div class="col-sm-6">
+                <label asp-for="DisCountAmount" class="form-label"></label>
+                <input asp-for="DisCountAmount" class="form-control" value="rtegrt" />
+            </div>
+            <div class="col-sm-6">
+                <label asp-for="StartDate" class="form-label"></label>
+                <input id="date-input" asp-for="StartDate"  class="form-control" value="rtegrt" />
+            </div>
+            <div class="col-sm-6">
+                <label asp-for="LifeTimeDay" class="form-label"></label>
+                <input asp-for="LifeTimeDay" class="form-control" value="rtegrt" />
+            </div>
+            <div class="col-sm-12">
+                <input style="width:100%;margin-top:20px" class="btn btn-success" type="submit" value="ثبت کد تخفیف " />
+            </div>
+
+        </div>
+
+    </form>
+</div>
+
+@section script{
+    <script>
+        function GuidGenerate(){
+            $.ajax({
+                url: "/admin/CreateDiscount/DiscountCodeGenerate",
+                type:"POST",
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                success: (data) => {
+                    $("#Code-Input").val(data);
+                }
+            });     
+        }
+    </script>
+}
+
